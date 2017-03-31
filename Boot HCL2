@@ -1,0 +1,9 @@
+--[[
+%% properties
+%% events
+%% globals
+--]]
+ 
+-- Reboot system
+fibaro:sleep(10*1000);
+HomeCenter.SystemService.reboot();
