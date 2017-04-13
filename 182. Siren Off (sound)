@@ -1,0 +1,18 @@
+--[[
+%% properties
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+startSource["type"] == "other"
+)
+then
+	fibaro:call(367, "turnOff");
+	fibaro:call(526, "turnOff");
+	fibaro:call(530, "turnOff");
+	fibaro:setGlobal("Lydvarsel", "Av");
+end
+
+
