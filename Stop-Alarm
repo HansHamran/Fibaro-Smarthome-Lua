@@ -1,0 +1,25 @@
+--[[
+%% properties
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (startSource["type"] == "other")
+then
+    -- slår av innbruddsalarm
+	fibaro:call(641, "setArmed", "0");
+	fibaro:call(204, "setArmed", "0");
+	fibaro:call(210, "setArmed", "0");
+	fibaro:call(343, "setArmed", "0");
+	fibaro:call(406, "setArmed", "0");
+	fibaro:call(24, "setArmed", "0");
+	fibaro:call(430, "setArmed", "0");
+	fibaro:call(639, "setArmed", "0");
+	fibaro:call(422, "setArmed", "0");
+	fibaro:call(444, "setArmed", "0");
+  	fibaro:call(601, "setArmed", "0"); 
+  
+end
+
+
