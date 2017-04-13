@@ -1,0 +1,16 @@
+--[[
+%% properties
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if fibaro:countScenes() > 1 then fibaro:abort() end
+if (
+startSource["type"] == "other"
+)
+then
+	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(441, "value")) == 1)
+    then fibaro:call(356, "secure");
+	end
+end
