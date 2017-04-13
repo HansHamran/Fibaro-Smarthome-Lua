@@ -1,0 +1,22 @@
+--[[
+%% properties
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+startSource["type"] == "other"
+)
+then
+	fibaro:call(55, "setValue", "50");
+	fibaro:call(51, "setValue", "20");
+	fibaro:call(59, "setValue", "40");
+	fibaro:call(67, "setValue", "10");
+	fibaro:call(71, "setValue", "20");
+	fibaro:call(63, "setValue", "50");
+	fibaro:call(289, "setValue", "30");
+	fibaro:call(293, "setValue", "30");
+	fibaro:call(512, "turnOn");
+end
+
