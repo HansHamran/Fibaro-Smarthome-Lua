@@ -1,0 +1,29 @@
+--[[
+%% properties
+%% events
+%% globals
+--]]
+
+
+local startSource = fibaro:getSourceTrigger();
+if (
+startSource["type"] == "other"
+)
+then
+	fibaro:setGlobal("Persienneopp", "Ja");
+	fibaro:setGlobal("Persienne", "100");
+	fibaro:call(74, "setValue2", "100");
+	fibaro:call(76, "setValue2", "100");
+	fibaro:call(48, "setValue2", "100");
+	fibaro:setGlobal("AutoPersi", "Nei");
+	fibaro:setGlobal("VentPersienne", "Release");
+	setTimeout(function()
+		fibaro:call(74, "open");
+	fibaro:call(76, "open");
+	fibaro:call(48, "open");
+	end, 4000)
+	setTimeout(function()
+		fibaro:startScene(85);
+	end, 120000)
+end
+
