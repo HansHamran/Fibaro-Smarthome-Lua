@@ -1,0 +1,47 @@
+--[[
+%% autostart
+%% properties
+%% events
+%% globals
+--]]
+
+
+local startSource = fibaro:getSourceTrigger();
+if (
+startSource["type"] == "other"
+)
+then
+	fibaro:call(55, "setValue", "100");
+	fibaro:call(51, "setValue", "100");
+	fibaro:call(59, "setValue", "100");
+	fibaro:call(67, "setValue", "100");
+	fibaro:call(71, "setValue", "100");
+	fibaro:call(63, "setValue", "100");
+	fibaro:call(267, "setValue", "100");
+	fibaro:call(289, "setValue", "100");
+	fibaro:call(293, "setValue", "100");
+	fibaro:call(251, "setValue", "100");
+	fibaro:call(247, "setValue", "100");
+	fibaro:call(176, "setValue", "100");
+	fibaro:call(227, "setValue", "100");
+	fibaro:call(263, "setValue", "100");
+	fibaro:call(152, "setValue", "100");
+	fibaro:call(164, "setValue", "100");
+	fibaro:call(281, "setValue", "100");
+	fibaro:call(275, "setValue", "100");
+	fibaro:call(271, "setValue", "100");
+	fibaro:call(255, "setValue", "100");
+	fibaro:call(189, "setValue", "100");
+	fibaro:call(259, "setValue", "100");
+	fibaro:call(375, "setValue", "100");
+	fibaro:call(379, "setValue", "100");
+	fibaro:call(512, "turnOn");
+	fibaro:call(183, "turnOn");
+	fibaro:call(185, "turnOn");
+	fibaro:call(240, "turnOn");
+	fibaro:call(236, "turnOn");
+	fibaro:call(169, "turnOn");
+	fibaro:call(244, "turnOn");
+	fibaro:call(585, "setValue", "100");
+end
+
