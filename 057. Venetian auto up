@@ -1,0 +1,24 @@
+--[[
+%% autostart
+%% properties
+206 value
+212 value
+205 value
+%% events
+%% globals
+VentPersienne
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(206, "value")) < 2000  and  tonumber(fibaro:getValue(212, "value")) < 150  and  tonumber(fibaro:getValue(205, "value")) < 30 )
+and
+ ( fibaro:getGlobalValue("AutoPersi") == "Ja"  and  fibaro:getGlobalValue("VentPersienne") == "Release"  and  fibaro:getGlobalValue("Persienneopp") == "Nei" )
+or
+startSource["type"] == "other"
+)
+then
+	fibaro:startScene(54);
+end
+
+
