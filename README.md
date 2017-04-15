@@ -1,4 +1,6 @@
 # Fibaro-Smarthome
 My Smarthome project
 
-I have made a smarthouse with Fibaro HCL, and will document my scripts here
+Documentation of my smarthome. Based on Z-wave, Fibaro HomeCenter 2 HC2 and Lua.
+
+Feel free you use my code
