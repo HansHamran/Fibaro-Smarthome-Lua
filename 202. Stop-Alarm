@@ -19,7 +19,13 @@ then
 	fibaro:call(422, "setArmed", "0");
 	fibaro:call(444, "setArmed", "0");
   	fibaro:call(601, "setArmed", "0"); 
+  	fibaro:call(367, "turnOff");
+	fibaro:call(526, "turnOff");
+	fibaro:call(530, "turnOff");
+	fibaro:setGlobal("Lydvarsel", "Av");
   
 end
+
+
 
 
