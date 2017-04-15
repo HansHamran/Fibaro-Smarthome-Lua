@@ -1,0 +1,78 @@
+--[[
+%% autostart
+%% properties
+%% events
+%% globals
+Nullstill
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+
+if (fibaro:getGlobalValue("Nullstill") == "Ja"
+      or startSource["type"] == "other")
+then
+	if fibaro:getGlobal("MinusRabakken") ~= "Nei" then
+     fibaro:setGlobal("MinusRabakken", "Nei") end
+    
+	if fibaro:getGlobal("VarmtKjolerom") ~= "Nei" then
+    fibaro:setGlobal("VarmtKjolerom", "Nei") end
+    
+    if fibaro:getGlobal("MorgenLysKjokken") ~= "Venter" then
+	fibaro:setGlobal("MorgenLysKjokken", "Venter") end
+ 
+      if fibaro:getGlobal("Kveldslysstue") ~= "Venter" then
+	fibaro:setGlobal("Kveldslysstue", "Venter") end
+  
+    if fibaro:getGlobal("AutolysOFF") ~= "Nei" then
+	fibaro:setGlobal("AutolysOFF", "Nei") end
+      
+	if fibaro:getGlobal("Panikkalarm") ~= "false" then
+    fibaro:setGlobal("Panikkalarm", "false") end
+  
+  	if fibaro:getGlobal("smoke_alarm") ~= "false" then
+    fibaro:setGlobal("smoke_alarm", "false") end
+  
+  	if fibaro:getGlobal("Innbruddsalarm") ~= "false" then
+    fibaro:setGlobal("Innbruddsalarm", "false") end
+  
+    if fibaro:getGlobal("VenteHjemmeAlarm") ~= "Nei" then
+    fibaro:setGlobal("VenteHjemmeAlarm", "Nei") end
+  
+  	if fibaro:getGlobal("HoldStueVarme") ~= "Nei" then
+    fibaro:setGlobal("HoldStueVarme", "Nei") end
+  
+  	fibaro:setGlobal("RunClock", "Nei");
+  	fibaro:sleep(120000)
+	fibaro:setGlobal("RunClock", "Ja");
+  
+    -- slår av alle lys
+	fibaro:call(55, "turnOff");
+	fibaro:call(51, "turnOff");
+	fibaro:call(59, "turnOff");
+	fibaro:call(67, "turnOff");
+	fibaro:call(71, "turnOff");
+	fibaro:call(63, "turnOff");
+	fibaro:call(267, "turnOff");
+	fibaro:call(289, "turnOff");
+	fibaro:call(293, "turnOff");
+	fibaro:call(251, "turnOff");
+	fibaro:call(247, "turnOff");
+	fibaro:call(176, "turnOff");
+	fibaro:call(585, "turnOff");
+	fibaro:call(259, "turnOff");
+	fibaro:call(263, "turnOff");
+	fibaro:call(152, "turnOff");
+	fibaro:call(375, "turnOff");
+	fibaro:call(189, "turnOff");
+	fibaro:call(164, "turnOff");
+	fibaro:call(255, "turnOff");
+	fibaro:call(281, "turnOff");
+	fibaro:call(275, "turnOff");
+	fibaro:call(271, "turnOff");
+	fibaro:call(508, "turnOff");
+end
+
+
+
+
+
