@@ -32,5 +32,3 @@ then
 	fibaro:call(236, "turnOff");
 	fibaro:call(585, "turnOff");
 end
-
-
