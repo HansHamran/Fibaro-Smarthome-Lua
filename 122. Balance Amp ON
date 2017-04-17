@@ -1,0 +1,26 @@
+--[[
+%% autostart
+%% properties
+572 value
+%% events
+%% globals
+--]]
+
+local spill_status = fibaro:getValue(335,"ui.Status.value");
+local play_status = fibaro:getValue(339,"ui.Status.value");
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(572, "value")) == 1  and  fibaro:getGlobalValue("Amp_balanse_spill") == "Nei" )
+or
+startSource["type"] == "other"
+)
+then
+  	fibaro:call(192, "turnOff")
+	fibaro:call(171, "turnOff")
+  	fibaro:setGlobal("Term_spill", spill_status);
+	fibaro:setGlobal("Term_playmo", play_status);
+  	fibaro:call(335, "pressButton", "5");
+	fibaro:call(339, "pressButton", "5");
+	fibaro:setGlobal("Amp_balanse_spill", "Ja");
+
+end
