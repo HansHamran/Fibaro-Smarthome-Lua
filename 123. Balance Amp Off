@@ -1,0 +1,41 @@
+--[[
+%% properties
+572 value
+%% events
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+local spill_reset = fibaro:getGlobalValue("Term_spill");
+local play_reset = fibaro:getGlobalValue("Term_playmo");
+local spill_button = 4;
+local play_button = 4;
+if (
+ ( tonumber(fibaro:getValue(572, "value")) == 0  and  fibaro:getGlobalValue("Amp_balanse_spill") == "Ja" )
+or
+startSource["type"] == "other"
+)
+then
+      	if (spill_reset == "Sparing") then
+      spill_button = 2
+    end
+        if (spill_reset == "Comfort") then
+      spill_button = 3
+    end
+        if (spill_reset == "Varme av") then
+      spill_button = 5
+    end
+
+      	if (play_reset == "Sparing") then
+      play_button = 2
+    end
+        if (play_reset == "Comfort") then
+      play_button = 3
+    end
+        if (play_reset == "Varme av") then
+      play_button = 5
+    end
+
+	fibaro:call(335, "pressButton", spill_button);
+	fibaro:call(339, "pressButton", play_button);
+	fibaro:setGlobal("Amp_balanse_spill", "Nei");
+end
