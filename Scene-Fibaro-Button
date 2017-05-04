@@ -31,8 +31,7 @@ elseif (tostring(button_source["keyAttribute"]) == "Pressed2") then
       	and tonumber(fibaro:getValue(422, "value")) == 0 
         and tonumber(fibaro:getValue(444, "value")) == 0)
  	then
-  		-- starter scene for låse opp og igjen garasje
-    	-- fibaro:startScene(209);
+  
     	-- venter på at utgangsdøra skal lukkes (60 sekunder)    
     	local teller = 1
     	while ( tonumber(fibaro:getValue(430, "value")) == 1 and teller < 60) do
@@ -61,7 +60,7 @@ elseif (tostring(button_source["keyAttribute"]) == "Pressed2") then
 			fibaro:call(444, "setArmed", "1");
     		fibaro:call(210, "setArmed", "1");
 			fibaro:call(343, "setArmed", "1");
-			fibaro:call(406, "setArmed", "1");
+			fibaro:call(650, "setArmed", "1");
 			fibaro:call(601, "setArmed", "1"); 
       		-- slå av alt lys
        		fibaro:call(55, "turnOff");
@@ -226,7 +225,7 @@ elseif (tostring(button_source["keyAttribute"]) == "Pressed3") then
 			fibaro:call(444, "setArmed", "1");
     		-- fibaro:call(210, "setArmed", "1");
 			-- fibaro:call(343, "setArmed", "1");
-			-- fibaro:call(406, "setArmed", "1");
+			-- fibaro:call(650, "setArmed", "1");
       		-- fibaro:call(601, "setArmed", "1"); 
       		-- slå av alt lys
        		fibaro:call(55, "turnOff");
