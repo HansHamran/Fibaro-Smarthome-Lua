@@ -12,7 +12,7 @@ then
 	fibaro:call(204, "setArmed", "0");
 	fibaro:call(210, "setArmed", "0");
 	fibaro:call(343, "setArmed", "0");
-	fibaro:call(406, "setArmed", "0");
+	fibaro:call(650, "setArmed", "0");
 	fibaro:call(24, "setArmed", "0");
 	fibaro:call(430, "setArmed", "0");
 	fibaro:call(639, "setArmed", "0");
