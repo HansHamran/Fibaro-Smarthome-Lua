@@ -13,6 +13,12 @@ then
 	fibaro:call(526, "turnOff");
 	fibaro:call(530, "turnOff");
 	fibaro:setGlobal("Lydvarsel", "Av");
+  	fibaro:startScene(172); -- Kjører on-off clock
+  
+  
 end
+
+
+
 
 
