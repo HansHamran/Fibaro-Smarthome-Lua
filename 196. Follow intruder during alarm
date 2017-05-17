@@ -1,0 +1,73 @@
+--[[
+%% properties
+24 value
+24 armed
+430 value
+430 armed
+639 value
+639 armed
+422 value
+422 armed
+444 value
+444 armed
+210 value
+210 armed
+343 value
+343 armed
+650 value
+650 armed
+601 value
+601 armed
+%% globals
+--]]
+
+-- IDs sensor
+local sensorID = {24, 430, 639, 422, 444, 210, 343, 650, 601}
+
+local phoneID = {448, 9, 102} -- ID der Handys
+
+local countID = 500
+
+
+-- Funktion som sender push
+function sendPush(text)
+ if (phoneID[1] ~= nil) then
+  for k=1, countID do
+     if phoneID[k] ~= nil then
+       fibaro:call(phoneID[k],'sendPush', text, 'sensor')
+     end
+  end
+ end
+end
+
+-- Script starter her
+
+local startSource = fibaro:getSourceTrigger();
+
+if (startSource['type'] == 'property') 
+  and fibaro:getGlobalValue("Innbruddsalarm") == "true"
+  then
+  local sensorID = tonumber(startSource['deviceID'])
+  local sensor = tonumber(fibaro:getValue(sensorID, "value"))
+  local armed = tonumber(fibaro:getValue(sensorID, "armed"))
+
+  if (sensor > 0 and armed > 0 
+    and fibaro:getGlobal("Innbruddsalarm") == 'true') 
+    then
+    local room = fibaro:getRoomNameByDeviceID(sensorID)
+  	local descr = fibaro:getValue(sensorID, "userDescription")
+  	local subject = "Rabakken5" -- passord SMS
+  	local message = "Innbruddsalarm, " ..descr.. " (" ..room.. ")."
+        if sensorID == 343 -- bevegelse gang
+      		then
+      		        fibaro:debug('Sender bilde gang')
+    				fibaro:call(477, "sendPhotoToUser", "2"); -- kamera i gang
+    	end
+    fibaro:debug(message)
+    sendPush(message)
+    fibaro:call(2, "sendEmail", subject, message); -- Mail Hans Olav
+    fibaro:call(515, "sendEmail", subject, message); -- SMS Nokas
+    fibaro:call(516, "sendEmail", subject, message); -- SMS Hans Olav
+
+	end
+end
