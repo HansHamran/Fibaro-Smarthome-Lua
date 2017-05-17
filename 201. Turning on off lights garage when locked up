@@ -1,0 +1,21 @@
+--[[
+%% properties
+542 value
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (tonumber(fibaro:getValue(542, "value")) > 0 
+    and tonumber(fibaro:getValue(643, "value")) < 150
+  	and  tonumber(fibaro:getValue(78, "value")) == 0 )
+  then
+  	fibaro:startScene(48);
+  else
+  	if tonumber(fibaro:getValue(78, "value")) > 0
+    then
+	fibaro:call(78, "turnOff");;
+    end
+end
+
+
