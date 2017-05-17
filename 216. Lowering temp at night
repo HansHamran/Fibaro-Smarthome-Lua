@@ -1,0 +1,54 @@
+--[[
+%% properties
+%% events
+%% globals
+NattogDag
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( fibaro:getGlobalValue("NattogDag") == "Natt" )
+or
+startSource["type"] == "other"
+)
+then
+  fibaro:sleep(1800000)
+
+      		-- Setter Nobø 2, Maris rom
+      		    if 	fibaro:getGlobal("RomMari") == "Kaldt"
+        			or fibaro:getGlobalValue("Ferie") == "Ja"
+		    	then
+		  		fibaro:call(606, "pressButton", "3"); -- Sparing
+        		else
+        		fibaro:call(606, "pressButton", "2"); -- Syklus
+				end
+      
+      		-- Setter Nobø 3, Fannys rom
+            	if 	fibaro:getGlobal("RomFanny") == "Kaldt"
+        			or fibaro:getGlobalValue("Ferie") == "Ja"
+		    	then
+		  		fibaro:call(607, "pressButton", "3"); -- Sparing
+        		else
+        		fibaro:call(607, "pressButton", "2"); -- Syklus
+				end
+      
+           -- Setter varme Katrines rom
+            	if 	fibaro:getGlobal("RomKatrine") == "Kaldt"
+        			or fibaro:getGlobalValue("Ferie") == "Ja"
+		    	then
+		  		fibaro:call(627, "pressButton", "2"); -- Sparing
+        		else
+        		fibaro:call(627, "pressButton", "4"); -- Syklus
+				end
+          	-- Setter varme Kontor
+            	if 	fibaro:getGlobal("RomKontor") == "Kaldt"
+        			or fibaro:getGlobalValue("Ferie") == "Ja"
+		    	then
+		  		fibaro:call(626, "pressButton", "2"); -- Sparing
+        		else
+        		fibaro:call(626, "pressButton", "4"); -- Syklus
+				end
+  
+end
+
+
