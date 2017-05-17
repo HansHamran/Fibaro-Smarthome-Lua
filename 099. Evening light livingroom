@@ -1,0 +1,30 @@
+--[[
+%% autostart
+%% properties
+210 value
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(51, "value")) == 0  
+      and  tonumber(fibaro:getValue(59, "value")) == 0  
+      and  tonumber(fibaro:getValue(67, "value")) == 0  
+      and  tonumber(fibaro:getValue(71, "value")) == 0  
+      and  tonumber(fibaro:getValue(63, "value")) == 0  
+      and  tonumber(fibaro:getValue(206, "value")) < 1500  
+      and  tonumber(fibaro:getValue(210, "value")) > 0  
+      and  tonumber(fibaro:getValue(205, "value")) < 30  
+      and  fibaro:getGlobalValue("Kveld") == "Ja"  
+      and  fibaro:getGlobalValue("AutolysOFF") == "Nei"  
+      and  fibaro:getGlobalValue("Kveldslysstue") == "Venter" )
+or
+startSource["type"] == "other"
+)
+then
+	fibaro:startScene(58);
+	fibaro:setGlobal("Kveldslysstue", "Done");
+end
+
+
