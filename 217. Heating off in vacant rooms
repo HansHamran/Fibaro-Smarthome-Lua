@@ -1,0 +1,51 @@
+--[[
+%% properties
+%% events
+%% globals
+RomFanny
+RomMari
+RomKatrine
+RomForeldre
+RomKontor
+RomSpill
+RomPlaymo
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+
+	if fibaro:getGlobalValue("RomFanny") == "Kaldt"
+		then fibaro:call(607, "pressButton", "3");
+	end
+
+	if fibaro:getGlobalValue("RomSpill") == "Kaldt"
+		then fibaro:call(335, "pressButton", "2"); -- spillrom syklus
+  		elseif fibaro:getGlobalValue("RomSpill") == "Bebodd" and
+  		fibaro:getGlobalValue("Ferie") == "Nei"
+  		then fibaro:call(335, "pressButton", "4"); -- spillrom sparing
+    end
+
+	if fibaro:getGlobalValue("RomPlaymo") == "Kaldt"
+		then fibaro:call(339, "pressButton", "2"); -- Playmo syklus
+  		 elseif fibaro:getGlobalValue("RomPlaymo") == "Bebodd" and
+  		fibaro:getGlobalValue("Ferie") == "Nei"
+  		then fibaro:call(339, "pressButton", "4"); -- Playmo sparing
+    end
+  
+	if fibaro:getGlobalValue("RomKatrine") == "Kaldt"
+		then fibaro:call(627, "pressButton", "2"); -- Katrine
+    end
+
+	if fibaro:getGlobalValue("RomMari") == "Kaldt"
+		then fibaro:call(606, "pressButton", "3"); -- Mari
+    end
+
+	if fibaro:getGlobalValue("RomForeldre") == "Kaldt"
+		then fibaro:call(136, "pressButton", "3"); -- Foreldrerom
+    end
+        
+	if fibaro:getGlobalValue("RomKontor") == "Kaldt"
+		then fibaro:call(626, "pressButton", "2"); -- Kontor
+    end
+
+
+
