@@ -1,0 +1,30 @@
+--[[
+%% properties
+24 value
+%% events
+%% globals
+Luftemodus
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+local term_reset = fibaro:getGlobalValue("Term_stue");
+local read_button = 4
+
+if (
+ ( tonumber(fibaro:getValue(24, "value")) == 0  and  fibaro:getGlobalValue("Luftemodus") == "Ja" )
+or
+startSource["type"] == "other"
+)
+then
+      if (term_reset == "Sparing") then
+      read_button = 2
+    end
+ --       if (term_reset == "Comfort") then
+ --     read_button = 3
+ --   end
+        if (term_reset == "Varme av") then
+      read_button = 5
+    end
+	fibaro:call(135, "pressButton", read_button);
+	fibaro:setGlobal("Luftemodus", "Nei");
+end
