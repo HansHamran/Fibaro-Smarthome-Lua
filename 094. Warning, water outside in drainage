@@ -1,0 +1,34 @@
+--[[
+%% autostart
+%% properties
+399 value
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(399, "value")) > 0 )
+or
+startSource["type"] == "other"
+)
+then
+  	local subject = "Rabakken5"
+  	local message = "Avsigskum i hagen sor (south) for huset staar full av vann."
+    fibaro:debug(message)
+    fibaro:call(448, "sendPush", message)
+    fibaro:call(102, "sendPush", message)
+    fibaro:call(2, "sendEmail", subject, message); -- Mail Hans Olav
+    fibaro:call(515, "sendEmail", subject, message); -- SMS Nokas
+    fibaro:call(516, "sendEmail", subject, message); -- SMS Hans Olav
+  
+  	-- kjører i gang litt lydvarsel
+  	fibaro:setGlobal("Lydvarsel", "På")
+  	fibaro:sleep(100)
+    while fibaro:getGlobalValue("Lydvarsel") == "På" do
+    	fibaro:call(367, "turnOn");
+    	fibaro:sleep(10)
+   	 	fibaro:call(367, "turnOff");
+  		fibaro:sleep(600000);
+	end
+end
