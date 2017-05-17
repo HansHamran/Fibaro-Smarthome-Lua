@@ -1,0 +1,27 @@
+--[[
+%% properties
+530 value
+367 value
+526 value
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if
+ ( tonumber(fibaro:getValue(530, "value")) > 0  
+      or  tonumber(fibaro:getValue(367, "value")) > 0  
+      or  tonumber(fibaro:getValue(526, "value")) > 0 )
+then
+  	fibaro:sleep(20000)
+  	if ( tonumber(fibaro:getValue(530, "value")) > 0  
+      or  tonumber(fibaro:getValue(367, "value")) > 0  
+      or  tonumber(fibaro:getValue(526, "value")) > 0 )
+    then
+   	 local sensorID = tonumber(startSource['deviceID'])
+   	 local room = fibaro:getRoomNameByDeviceID(sensorID)
+   	 local melding = ("Sirena uler i " .. room .. ".")
+		fibaro:call(448,'sendPush', melding); -- push Hans Olav
+    	  fibaro:call(516, "sendEmail", "Rabakken5", melding); -- SMS Hans Olav
+    end
+end
