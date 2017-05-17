@@ -1,0 +1,21 @@
+--[[
+%% autostart
+%% properties
+33 value
+%% events
+%% globals
+MinusRabakken
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(33, "value")) < 0  and  fibaro:getGlobalValue("MinusRabakken") == "Nei" )
+or
+startSource["type"] == "other"
+)
+then
+  	local melding = ("Nå er det " .. fibaro:getValue(33, "value") .. " grader i Rabakken.")
+	fibaro:call(448,'sendPush', melding);
+    fibaro:call(2, "sendEmail", "Minusgrader i Rabakken", melding); -- Mail Hans Olav
+	fibaro:setGlobal("MinusRabakken", "Ja");
+end
