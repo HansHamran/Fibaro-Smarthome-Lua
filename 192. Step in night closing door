@@ -1,0 +1,24 @@
+--[[
+%% properties
+430 value
+%% events
+%% globals
+Hjemmealarm
+VenteHjemmeAlarm
+NattogDag
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+    (
+    (fibaro:getGlobalValue("Hjemmealarm") == "Ja")
+	and (fibaro:getGlobalValue("VenteHjemmeAlarm") == "Vent")
+    and (fibaro:getGlobalValue("NattogDag") == "Natt")
+    and ( tonumber(fibaro:getValue(430, "value")) == 1 )
+    )
+    or
+	(startSource["type"] == "other")
+	)
+then
+    fibaro:setGlobal("VenteHjemmeAlarm", "Ja")
+end
