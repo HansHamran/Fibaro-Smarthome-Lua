@@ -1,0 +1,22 @@
+--[[
+%% autostart
+%% properties
+206 value
+205 value
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(206, "value")) < 200  and  tonumber(fibaro:getValue(205, "value")) < 31 )
+or
+startSource["type"] == "other"
+)
+then
+	if
+    fibaro:getGlobalValue("Utelys") == "Off" 
+    then
+    fibaro:setGlobal("Utelys", "On");
+    end
+end
