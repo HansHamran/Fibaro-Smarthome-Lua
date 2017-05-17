@@ -1,0 +1,31 @@
+--[[
+%% properties
+572 value
+%% events
+%% globals
+--]]
+
+
+-- Funktion for å slå av og på dummy rele Nobø 4 (302)
+function releWOnOff(status)
+    --fibaro:debug(status)
+ if (status == 1) then
+   	--fibaro:debug('Dummyrele 4 slås av')
+   	fibaro:call(181,'turnOn')
+ elseif (status == 0) then
+	--fibaro:debug('Dummyrele 4 slås på')
+   	fibaro:call(181,'turnOff')
+ end
+end
+-- sjekker om Nobørele har endret status
+
+
+local trigger = fibaro:getSourceTrigger()
+
+if (
+	(trigger['type']=='property')
+	) 
+then
+    releWOnOff(tonumber(fibaro:getValue(572, "value"))
+      )
+end
