@@ -1,0 +1,14 @@
+--[[
+%% autostart
+%% properties
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (startSource["type"] == "other")
+then
+	fibaro:setGlobal("RunClock", "Nei");
+  	fibaro:sleep(120000);  
+	fibaro:setGlobal("RunClock", "Ja");
+end
