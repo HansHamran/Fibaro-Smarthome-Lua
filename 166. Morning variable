@@ -1,0 +1,78 @@
+--[[
+%% autostart
+%% properties
+%% events
+%% globals
+RunClock
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( fibaro:getGlobalValue("RunClock") == "Ja" )
+or
+startSource["type"] == "other"
+)
+then
+
+local BeforeOn = 0
+local debug = 0
+  
+if fibaro:countScenes() > 1 then fibaro:abort() end
+
+
+while fibaro:getGlobalValue("RunClock") == "Ja" do
+
+    if debug == 1 then fibaro:debug("Sjekker") end
+--  local on_time = (fibaro:getValue(1,'sunsetHour'));
+--  local off_time = (fibaro:getValue(1,'sunriseHour'));
+local on_time = "05:30";
+local off_time = "09:30";
+local variable = "Morgen";
+local verdi_on = "Ja";
+local verdi_off = "Nei";
+local adjust_time = os.date("%H:%M", os.time()+60*BeforeOn)
+	if debug == 1 then   fibaro:debug("adjust_time " .. adjust_time) end
+
+	if on_time > off_time
+	then
+    	if os.date("%H:%M", os.time()) > adjust_time then adjust_time = on_time
+			if debug == 1 then  fibaro:debug("adjust_time II " .. adjust_time) end
+    	end
+  		if
+        (adjust_time >= on_time 
+     	or os.date("%H:%M", os.time()) < off_time)
+      	then 
+        	if (fibaro:getGlobalValue(variable) ~= verdi_on)
+          	then
+      		fibaro:setGlobal(variable, verdi_on)
+           		if debug == 1 then fibaro:debug(variable .. " satt til " .. fibaro:getGlobal(variable)) end
+          	end
+      	else
+       		if (fibaro:getGlobalValue(variable) ~= verdi_off)
+         	then
+      		fibaro:setGlobal(variable, verdi_off)
+        		if debug ==1 then fibaro:debug(variable .. " satt til " .. fibaro:getGlobal(variable)) end
+        	end
+      	end
+	else
+		if adjust_time >= on_time
+      	and (os.date("%H:%M", os.time()) < off_time)
+      	then 
+        	if (fibaro:getGlobalValue(variable) ~= verdi_on)
+          	then
+      		fibaro:setGlobal(variable, verdi_on)
+            	if debug == 1 then fibaro:debug(variable .. " satt til " .. fibaro:getGlobal(variable)) end
+          	end
+      	else
+       	if (fibaro:getGlobalValue(variable) ~= verdi_off)
+        then
+      	fibaro:setGlobal(variable, verdi_off)
+        	if debug ==1 then fibaro:debug(variable .. " satt til " .. fibaro:getGlobal(variable)) end
+        end
+	end
+end
+   if fibaro:countScenes() > 1 then fibaro:abort() end
+  -- running once a minute is enough
+  fibaro:sleep(60000)
+end
+end
