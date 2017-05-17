@@ -1,0 +1,31 @@
+--[[
+%% autostart
+%% properties
+24 value
+%% events
+%% globals
+Luftemodus
+SekstiLuftemodus
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if
+   (tonumber(fibaro:getValue(24, "value")) > 0 
+    and fibaro:getGlobal("Luftemodus") == "Nei"
+    and fibaro:getGlobal("SekstiLuftemodus") == "Nei") 
+   	or (startSource["type"] == "other")
+    then
+  		fibaro:setGlobal("SekstiLuftemodus", "Ja")
+		fibaro:sleep(60000)
+		if ( 
+      	tonumber(fibaro:getValue(24, "value")) > 0 
+        and fibaro:getGlobal("Luftemodus") == "Nei"
+    	and fibaro:getGlobal("SekstiLuftemodus") == "Ja")
+		then
+			local ther_status = fibaro:getValue(135,"ui.Status.value");
+   			fibaro:setGlobal("Term_stue", ther_status);
+			fibaro:call(135, "pressButton", "5");
+			fibaro:setGlobal("Luftemodus", "Ja");
+		end
+  	fibaro:setGlobal("SekstiLuftemodus", "Nei")
+  end
