@@ -1,0 +1,50 @@
+--[[
+%% autostart
+%% properties
+210 value
+7 power
+135 ui.Status.value
+%% events
+%% globals
+Luftemodus
+Ferie
+HoldStueVarme
+SekstiLuftemodus
+RunClock
+--]]
+local startSource = fibaro:getSourceTrigger();
+-- Sjekker om bevelgelse eller TV er på, at det ikke er luftemodus, feriemodus eller allerede aktivert
+if (
+  ( tonumber(fibaro:getValue(210, "value")) > 0   or 
+       tonumber(fibaro:getValue(7, "power")) > 20 )
+	and fibaro:getGlobalValue("Luftemodus") == "Nei"
+	-- and fibaro:getGlobalValue("Ferie") == "Nei"
+    and fibaro:getValue(135,"ui.Status.value") == "Normal syklus"
+	and fibaro:getGlobalValue("HoldStueVarme") == "Nei"
+    and fibaro:getGlobal("SekstiLuftemodus") == "Nei"
+    and fibaro:getGlobalValue("RunClock") == "Ja"
+)
+or
+startSource["type"] == "other"
+then
+  	fibaro:setGlobal("HoldStueVarme", "Ja");
+  	fibaro:call(135, "pressButton", "3"); -- Trykker på comfort
+    fibaro:sleep(1800000);
+    while tonumber(fibaro:getValue(210, "value")) > 0   or 
+       	tonumber(fibaro:getValue(7, "power")) > 20 do
+    	fibaro:sleep(1800000);
+    end
+  
+  	if fibaro:getValue(135,"ui.Status.value") == "Comfort"
+    	then
+    		if fibaro:getGlobalValue("Ferie") == "Nei"
+      		then
+  				fibaro:call(135, "pressButton", "4"); -- Normal syklus
+      		else
+      			fibaro:call(135, "pressButton", "2"); -- Sparing
+      		end
+    	end
+  fibaro:setGlobal("HoldStueVarme", "Nei");
+end
+
+
