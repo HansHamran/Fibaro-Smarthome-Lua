@@ -1,0 +1,25 @@
+--[[
+%% properties
+%% events
+%% globals
+--]]
+
+
+local startSource = fibaro:getSourceTrigger();
+if (
+startSource["type"] == "other"
+)
+then
+	fibaro:call(289, "turnOff");
+	fibaro:call(293, "turnOff");
+	fibaro:call(55, "turnOff");
+	fibaro:call(51, "turnOff");
+	fibaro:call(59, "turnOff");
+	fibaro:call(67, "turnOff");
+	fibaro:call(71, "turnOff");
+	fibaro:call(63, "turnOff");
+	fibaro:call(267, "turnOff");
+	fibaro:call(512, "turnOff");
+end
+
+
