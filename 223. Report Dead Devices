@@ -48,7 +48,7 @@ while true do
       local melding = (day.."/"..month..":"..i..' DEAD, trying to re-start '..name..":"..room);
       fibaro:debug(melding); 
       fibaro:call(448,'sendPush', melding);
-      fibaro:wakeUpDeadDevice(i) 
+	  fibaro:call(i, "wakeUpDeadDevice")
       fibaro:sleep(50000) --check again in 50 sec 
       status = fibaro:getValue(i, 'dead'); 
       if status >= "1" then
