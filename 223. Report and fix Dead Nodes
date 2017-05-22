@@ -47,7 +47,7 @@ while true do
     if status >= "1" then 
       local melding = (day.."/"..month..":"..i..' DEAD, trying to re-start '..name..":"..room);
       fibaro:debug(melding); 
-      fibaro:call(448,'sendPush', melding);
+      --fibaro:call(448,'sendPush', melding);
 	  fibaro:call(i, "wakeUpDeadDevice")
       fibaro:sleep(50000) --check again in 50 sec 
       status = fibaro:getValue(i, 'dead'); 
@@ -59,7 +59,7 @@ while true do
       else
         local melding = (day.."/"..month..":"..i..' succeeded restart '..name..":"..room);
         fibaro:debug(melding)
-        fibaro:call(448,'sendPush', melding);
+        --fibaro:call(448,'sendPush', melding);
       end
       else
       end
@@ -71,13 +71,13 @@ while true do
   if anydead == 0 then
     --fibaro:debug('Nobody is dead :-) ') 
   else 
-    fibaro:debug('Somebody really DEAD') 
+    fibaro:debug('A device is really DEAD') 
     fibaro:call(2, "sendEmail", "Fibaro device is dead", melding); -- Mail Hans Olav
   end 
   
   -- abort any unnecesary scenes started 
   if fibaro:countScenes() > 1 then fibaro:abort() end 
   
-  fibaro:sleep(60*60000) --repeat every 60 minutes 
-end
+  fibaro:sleep(15*60000) --repeat every 60 minutes 
   end
+ end
