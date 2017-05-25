@@ -1,0 +1,64 @@
+--[[
+%% properties
+%% events
+503 CentralSceneEvent
+%% globals
+--]]
+ 
+local button_source = fibaro:getSourceTrigger()["event"]["data"]
+ 
+if (tostring(button_source["keyAttribute"]) == "Pressed") then
+
+  	-- Nattstilling
+  	fibaro:startScene(100);
+  
+ 
+elseif (tostring(button_source["keyAttribute"]) == "Pressed2") then
+  
+	-- slår av og på lyset i foreldresoverom
+	if tonumber(fibaro:getValue(255, "value")) > 0
+    then
+    fibaro:call(255, "turnOff")
+    else
+  	fibaro:call(255, "turnOn")
+    end
+
+  
+elseif (tostring(button_source["keyAttribute"]) == "Pressed3") then
+  	fibaro:debug('Fibaro Button 3x gedrückt.')
+elseif (tostring(button_source["keyAttribute"]) == "Pressed4") then
+  	fibaro:debug('Fibaro Button 4x gedrückt.')
+elseif (tostring(button_source["keyAttribute"]) == "Pressed5") then
+  
+  -- slår av innbruddsalarm
+	fibaro:call(641, "setArmed", "0");
+	fibaro:call(204, "setArmed", "0");
+	fibaro:call(210, "setArmed", "0");
+	fibaro:call(343, "setArmed", "0");
+	fibaro:call(650, "setArmed", "0");
+	fibaro:call(24, "setArmed", "0");
+	fibaro:call(430, "setArmed", "0");
+	fibaro:call(447, "setArmed", "0");
+	fibaro:call(422, "setArmed", "0");
+	fibaro:call(444, "setArmed", "0");
+  	fibaro:call(601, "setArmed", "0");
+
+
+elseif (tostring(button_source["keyAttribute"]) == "HeldDown") then
+
+  	if fibaro:getGlobalValue("Panikkalarm") == "false"
+    then
+        	local subject = "Rabakken5" -- passord SMS
+  			local message = "Panikkalarm er utlost hos Hamran/Nordhagen i Rabakken 5, 0880 Oslo."
+            fibaro:debug(message)
+    		fibaro:call(448, "sendPush", message) -- HOs mobil
+    		-- fibaro:call(102, "sendPush", message) -- marits mobil
+    		fibaro:call(2, "sendEmail", subject, message); -- Mail Hans Olav
+   			fibaro:call(515, "sendEmail", subject, message); -- SMS Nokas
+    		fibaro:call(516, "sendEmail", subject, message); -- SMS Hans Olav
+    		fibaro:setGlobal("Panikkalarm", "true")
+    end
+  
+elseif (tostring(button_source["keyAttribute"]) == "Released") then
+  	fibaro:setGlobal("Panikkalarm", "false")
+end
