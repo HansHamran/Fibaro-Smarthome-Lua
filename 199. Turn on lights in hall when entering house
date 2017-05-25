@@ -1,0 +1,24 @@
+--[[
+%% properties
+441 value
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(441, "value")) > 0 )
+or
+startSource["type"] == "other"
+)
+then
+	if fibaro:getGlobalValue("AutolysOFF") == "Nei"
+    then
+  	fibaro:startScene(91);
+    else
+	fibaro:startScene(133);
+    end
+end
+
+
+
