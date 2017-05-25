@@ -1,0 +1,227 @@
+  Stue
+7	  TV - Fibaro wall plug
+24	Verandadør stue
+25	VD Fjernkontroll TV
+30	Stuetemperatur 12v
+51	Spot avissofa
+55	PH lampe
+59	Spot peis
+63	Spot trapp
+67	Spot TV
+71	Spot TV-Sofa
+74	Persienne Sør
+76	Persienne Nord
+135	VD termostat stue
+210	Bevegelse stue
+211	Temp bevegelse stue
+212	Luxmåler stue
+267	Arbeidslys spisebord
+181	Dummy rele Nobø 4
+363	Røykvarsler stue
+364	Varmesensor stue
+365	Temp røykvarsler stue
+572	Rele Nobø 4. stue
+	
+	Gang
+48	Persienne gang
+176	Spot vindfang
+179	Kabel vindfang
+648	Keypad utgang
+247	Spot nedegang
+251	Spot lang gang
+585	Spot garderobe
+343	Bevegelse gang
+344	Temp bevegelse gang
+345	Luxmåler gang
+356	Danloc dørlås
+441	Dørslå ytterdør
+639	Dørsensor hagedør sittegruppe 447
+430	Hoveddørsensor
+490	Temp røykvarsler gang
+489	Varmedetektor gang
+488	Røykvarsler gang
+486	Button gang
+477	IP kamera i gang
+	
+	Kjellergang
+31	Temperatur kjellergang 12V
+152	Lys lang kjellergang
+143	Kabel lang gang kjeller
+147	Kabel kjeller nedenfor trapp
+159	Kabel nedre gang kjeller
+169	Lys nedre gang kjeller
+263	Lys trapp til kjeller
+336	VD termostat kjellergang
+406 - 650	Bevegelse kjellergang
+407	Temperatur bevegelse kjellergang
+408	Luxmåler kjellergang
+526	Stikk sirene kjellergang
+	
+	Spillrom
+130	Temperatur spillrom 12v
+189	Lys spillrom
+192	Kabel spillrom
+335	VD termostat spillrom
+593	Røykvarsler spillrom
+594	Varmesensor spillrom
+595	Temperatur røykvarsler spillrom
+601	Bevegelse spillrom
+602	Temperatur bevegelse spillrom
+	Luxmåler spillrom
+	
+	Kontor
+139	Røykvarsler kontor
+140	Varmedetektor kontor
+141	Temperatur røykvarsler kontor
+259	Lys kontor
+249	Flyttbar kontakt
+422	Dørsensor kontor
+619	Nobø ovn
+	
+	Nedebad
+116	Temperatur nedebad 12v
+155	Kabel nedebad
+375	Hovedspot bad nede
+379	Spot speil
+	
+	WC
+115	Temperatur WC 12v
+222	Kabel WC
+227	Lys WC
+	
+	Oppebad
+117	Temperatur oppebad 12v
+183	Firkantlys oppebad
+185	Lysrør oppebad
+450	Kabel oppebad
+	
+	Vaskerom
+114	Temperatur vaskerom 12v
+242	Kabel vaskerom
+244	Lys vaskerom
+470	Flood vaskerom
+472	Temp flood vaskerom
+468	Stoppekran
+597	Røykvarsler vaskerom
+598	Varmesensor vaskerom
+599	Temperatur røykvarsler vaskerom
+	
+	Foreldresoverom
+131	Temperatur foreldresoverom 12v
+136	VD termostat foreldresoverom
+224	Dummy rele Nobø 1
+255	Lys foreldresoverom
+412	Røykvarsler foreldresoverom
+413	Varmesensor foreldresoverom
+414	Temperatur røykvarsler foreldresov
+566	Rele Nobø 1. Foreldresoverom
+	
+	Nobø
+	
+570	Rele Nobø 3. Oppholdsrom
+	
+	Ute
+33	Utetemperatur 12V
+97	Kamera av hus (10.01.1.43)
+386	Utelys bak huset
+399	Vannsensor dreneringskum
+401	Temperatur vannsensor i kum
+97	IP kamera ute
+	
+	Garasje
+78	Lys garasje
+641	Bevegelse garasje
+642	Temperatur bevegelse garasje
+643	Lux garasje
+542	Låsebolt garasje
+	Garasjelås
+613	Røykvarsler garasje
+614	Varmedetektor garasje
+615	Temperatur røykvarsler garasje
+	
+	Kontrollrom
+10	VR HC2 restart LUA
+40	VR HC2 restart String
+137	VR Simulate presense
+334	VR Termostat våtrom og tørk
+	
+	Kjølerom
+395	Temperatur kjølerom 12v
+	
+	Koffertrom
+132	Temperatur koffertrom 12v
+234	Kabel koffertrom
+236	Lys koffertrom
+338	VD Termostat koffertrom
+530	Sirene D-link
+	
+	Sportsrom
+133	Temperatur sportsrom 12v
+238	Kabel sportsrom
+240	Lys sportsrom
+367	Sirene
+	
+	Utebod
+204	Bevegelse utebod
+205	Temperatur utebod
+206	Lux utebod
+296	Lys utebod
+522	Røyk utebod
+523	Varmedetektor utebod
+524	Temperatur utebod
+609	Ovn utebod
+	
+	Playmorom
+164	Lys playmorom
+171	Kabel playmorom
+328	Temperatur playmorom
+339	VD Termostat playmorom
+444	Dørsensor playmorom
+505	Flood playroom
+507	Temp flood playmorom
+	
+	Trappebod
+167	Lys trappebod
+	
+	Katrines rom
+271	Lys Katrine
+331	Røykvarsler Katrine
+332	Varmesensor Katrine
+333	Temperatur røykvarsler Katrine
+	
+	Maris rom
+275	Lys Mari
+310	Røykvarsler Mari
+311	Varmesensor Mari
+312	Temperatur røykvarsler Mari
+327	Temperatur 12v Mari
+79	Nobø dummy ovn
+568	Rele Nobø 2. Ubrukte rom
+	
+	Fannys rom
+281	Lys Fanny
+329	Temperatur Fanny 12v
+359	Røykvarsler Fanny
+360	Varmesensor Fanny
+361	Temperatur røykvarsler Fanny
+	
+	Kjøkken
+289	Spot kjøkken
+293	Lys underskap
+512	Kuppen kjøkken (Tid 508)
+474	Flood kjøkken
+476	Temp flood kjøkken
+	
+	Saferom
+382	Kabel saferom
+384	Lys saferom
+518	Røykvarsler saferom
+519	Varmedektetor saferom
+520	Temperatur røykvarsler saferom
+
+HO mobil	448
+HO iPad	9
+Marit Mobil	102
+	
+Nokas SMS	515
+Hans Olav SMS	516
