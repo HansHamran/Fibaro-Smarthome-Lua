@@ -1,8 +1,8 @@
 --[[
 %% properties
-278 CentralSceneEvent 5
 %% weather
 %% events
+278 CentralSceneEvent 5
 %% globals
 --]]
 
