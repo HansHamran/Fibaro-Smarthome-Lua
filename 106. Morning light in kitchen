@@ -1,0 +1,21 @@
+--[[
+%% autostart
+%% properties
+210 value
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(206, "value")) < 1800  and  tonumber(fibaro:getValue(210, "value")) > 0  and  fibaro:getGlobalValue("Ferie") == "Nei"  and  fibaro:getGlobalValue("Morgen") == "Ja"  and  fibaro:getGlobalValue("MorgenLysKjokken") == "Venter" )
+)
+then
+	fibaro:call(293, "setValue", "50");
+	fibaro:call(289, "setValue", "50");
+	fibaro:call(512, "turnOn");
+	fibaro:call(55, "setValue", "80");
+	fibaro:call(51, "setValue", "20");
+	fibaro:call(63, "setValue", "20");
+	fibaro:setGlobal("MorgenLysKjokken", "Done");
+end
