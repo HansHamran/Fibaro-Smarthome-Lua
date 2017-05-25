@@ -18,4 +18,3 @@ then
 	fibaro:call(448,'sendPush', melding);
     fibaro:setGlobal("VarmtKjolerom", "Ja")
 end
-
