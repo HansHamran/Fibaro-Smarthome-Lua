@@ -1,8 +1,8 @@
 --[[
 %% properties
-278 CentralSceneEvent 4
 %% weather
 %% events
+278 CentralSceneEvent 4
 %% globals
 --]]
 
@@ -15,3 +15,4 @@ startSource["type"] == "other"
 then
 	fibaro:startScene(64);
 end
+
