@@ -1,0 +1,41 @@
+--[[
+%% autostart
+%% properties
+33 value
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if fibaro:countScenes() > 1 then fibaro:abort() end
+if
+	((fibaro:getGlobalValue("Ferie") == "Nei" and
+      (
+      tonumber(fibaro:getValue(33, "value")) <= 13
+      or
+      (
+    	tonumber(fibaro:getValue(33, "value")) <= 18
+      and   api.get('/weather')['WeatherCondition'] == "rain")))  
+	or
+	startSource["type"] == "other")
+
+then
+
+	while (
+    	fibaro:getGlobalValue("Ferie") == "Nei" and
+      	(tonumber(fibaro:getValue(33, "value")) <= 13
+      	or
+      	(tonumber(fibaro:getValue(33, "value")) <= 18
+      	and  ( api.get('/weather')['WeatherCondition']) == "rain"))) 
+  		do
+			if (tonumber(fibaro:getValue(179, "value")) > 0) 
+        	then
+			fibaro:call(179, "turnOff");
+        	fibaro:sleep(700000)
+			else
+			fibaro:call(179, "turnOn");
+      		fibaro:sleep(1000000)
+      		end
+	end
+fibaro:call(179, "turnOff")
+end
