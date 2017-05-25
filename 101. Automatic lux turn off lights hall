@@ -1,0 +1,21 @@
+--[[
+%% autostart
+%% properties
+206 value
+%% weather
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(206, "value")) > 2500 )
+or
+startSource["type"] == "other"
+)
+then
+	fibaro:call(251, "turnOff");
+	fibaro:call(247, "turnOff");
+	fibaro:call(176, "turnOff");
+	fibaro:call(585, "turnOff");
+end
