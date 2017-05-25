@@ -1,0 +1,17 @@
+--[[
+%% properties
+278 value
+%% weather
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(278, "value")) == 0 )
+or
+startSource["type"] == "other"
+)
+then
+	fibaro:startScene(58);
+end
