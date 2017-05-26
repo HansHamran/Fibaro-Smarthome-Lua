@@ -1,5 +1,5 @@
-  Stue
-7	  TV - Fibaro wall plug
+	Stue
+7	TV - Fibaro wall plug
 24	Verandadør stue
 25	VD Fjernkontroll TV
 30	Stuetemperatur 12v
@@ -52,9 +52,9 @@
 169	Lys nedre gang kjeller
 263	Lys trapp til kjeller
 336	VD termostat kjellergang
-406 - 650	Bevegelse kjellergang
-407	Temperatur bevegelse kjellergang
-408	Luxmåler kjellergang
+650	Bevegelse kjellergang
+651	Temperatur bevegelse kjellergang
+652	Luxmåler kjellergang
 526	Stikk sirene kjellergang
 	
 	Spillrom
@@ -67,7 +67,7 @@
 595	Temperatur røykvarsler spillrom
 601	Bevegelse spillrom
 602	Temperatur bevegelse spillrom
-	Luxmåler spillrom
+603	Luxmåler spillrom
 	
 	Kontor
 139	Røykvarsler kontor
@@ -134,7 +134,6 @@
 642	Temperatur bevegelse garasje
 643	Lux garasje
 542	Låsebolt garasje
-	Garasjelås
 613	Røykvarsler garasje
 614	Varmedetektor garasje
 615	Temperatur røykvarsler garasje
@@ -218,10 +217,10 @@
 518	Røykvarsler saferom
 519	Varmedektetor saferom
 520	Temperatur røykvarsler saferom
-
+	
 HO mobil	448
-HO iPad	9
+HO iPad		9
 Marit Mobil	102
 	
 Nokas SMS	515
-Hans Olav SMS	516
+Hans Olav SMS	516	
