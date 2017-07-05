@@ -14,7 +14,7 @@ startSource["type"] == "other"
 )
 then
   	local subject = "Rabakken5"
-  	local message = "Avsigskum i hagen sor (south) for huset staar full av vann."
+  	local message = "Avsigskum i hagen sor (south) for Rabakken 5 staar full av vann."
     fibaro:debug(message)
     fibaro:call(448, "sendPush", message)
     fibaro:call(102, "sendPush", message)
@@ -32,3 +32,4 @@ then
   		fibaro:sleep(600000);
 	end
 end
+
