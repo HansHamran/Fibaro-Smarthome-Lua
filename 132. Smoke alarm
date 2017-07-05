@@ -116,7 +116,7 @@ end
 
 -- Fuksjon for å sjekke røykvarslere
 function checkSmoke()
- fibaro:debug('En røykvarsler er sikker. Sjekker de andre sensorene.')
+ fibaro:debug('En røykvarsler i Rabakken 5 er sikker. Sjekker de andre sensorene.')
  local smoke_counter = 0 
  for s=1, countID do
     if smokeID[s] ~= nil then
@@ -126,10 +126,10 @@ function checkSmoke()
     end
  end
  if (smoke_counter == 0) then
-   fibaro:debug('Alle røykvarslere er sikre.')
+   fibaro:debug('Alle røykvarslere Rabakken 5 er sikre.')
    return true
  elseif (smoke_counter > 0) then
-   fibaro:debug(smoke_counter..' Røykvarsler er ennå ikke sikret...')
+   fibaro:debug(smoke_counter..' Røykvarsler Rabakken 5 er ennå ikke sikret...')
    return false
  end
 end
@@ -182,7 +182,7 @@ if (trigger['type']=='property') then
     
   elseif (smoke == 1 and fibaro:getGlobal("smoke_alarm") == 'true') then
         local subject = "Rabakken5" -- passord SMS
-  		local message = ("Ytterligere en roykalarm i " ..room.. " har oppdaget royk.")
+  		local message = ("Ytterligere en roykalarm Rabakken 5 i " ..room.. " har oppdaget royk.")
     	fibaro:debug(message)
     	sendPush(message)
     	fibaro:call(2, "sendEmail", subject, message); -- Mail Hans Olav
@@ -195,7 +195,7 @@ if (trigger['type']=='property') then
   end
 else
     local subject = "Rabakken5" -- passord SMS
-  	local message = ("Roykalarmscenen ble utlost manuelt.")
+  	local message = ("Roykalarmscenen i Rabakken 5 ble utlost manuelt.")
     fibaro:debug(message)
     sendPush(message)
     fibaro:call(2, "sendEmail", subject, message); -- Mail Hans Olav
@@ -203,3 +203,7 @@ else
  
 	fibaro:setGlobal("smoke_alarm", "false")
 end
+
+
+
+
