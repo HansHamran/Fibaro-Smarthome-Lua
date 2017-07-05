@@ -57,7 +57,7 @@ if (startSource['type'] == 'property')
     local room = fibaro:getRoomNameByDeviceID(sensorID)
   	local descr = fibaro:getValue(sensorID, "userDescription")
   	local subject = "Rabakken5" -- passord SMS
-  	local message = "Innbruddsalarm, " ..descr.. " (" ..room.. ")."
+  	local message = "Innbruddsalarm Rabakken 5, " ..descr.. " (" ..room.. ")."
         if sensorID == 343 -- bevegelse gang
       		then
       		        fibaro:debug('Sender bilde gang')
@@ -71,3 +71,7 @@ if (startSource['type'] == 'property')
 
 	end
 end
+
+
+
+
