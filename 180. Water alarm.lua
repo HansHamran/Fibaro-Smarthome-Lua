@@ -23,7 +23,7 @@ then
   		local descr = fibaro:getValue(sensorID, "userDescription")
       
   		local subject = "Rabakken5" -- passord SMS
-  		local message = "Vannlekkasje, " ..descr.. " (" ..room.. ") er oppdaget."
+  		local message = "Vannlekkasje i Rabakken 5, " ..descr.. " (" ..room.. ") er oppdaget."
     	fibaro:debug(message)
     	fibaro:call(448, "sendPush", message) -- HOs mobil
     	fibaro:call(102, "sendPush", message) -- marits mobil
@@ -50,7 +50,7 @@ then
     	if tonumber(fibaro:getValue(468, "value")) == 0
       	then
       		local subject = "Rabakken5" -- passord SMS
-  			local message = "Vannlekaskje i Rabakken 5. Hovedkran er automatisk stengt."
+  			local message = "Vannlekkasje i Rabakken 5. Hovedkran er automatisk stengt."
         	fibaro:debug(message)
     		fibaro:call(448, "sendPush", message) -- HOs mobil
     		fibaro:call(102, "sendPush", message) -- marits mobil
