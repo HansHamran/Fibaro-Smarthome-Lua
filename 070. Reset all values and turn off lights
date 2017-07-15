@@ -42,13 +42,13 @@ then
     fibaro:setGlobal("HoldStueVarme", "Nei") end
   
   	if fibaro:getGlobal("Persienneopp") ~= "Nei" then
-  	fibaro:setGlobal("Persienneopp", "Nei");
+  	fibaro:setGlobal("Persienneopp", "Nei"); end
     
     if fibaro:getGlobal("VentPersienne") ~= "Release" then
-    fibaro:setGlobal("VentPersienne", "Release");
+    fibaro:setGlobal("VentPersienne", "Release"); end
       
     if fibaro:getGlobal("AutoPersi") ~= "Nei" then
-    fibaro:setGlobal("AutoPersi", "Nei");
+    fibaro:setGlobal("AutoPersi", "Nei"); end
   
   	fibaro:setGlobal("RunClock", "Nei");
   	fibaro:sleep(120000)
