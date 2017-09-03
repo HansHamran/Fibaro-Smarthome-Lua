@@ -14,12 +14,12 @@ then
 	fibaro:setGlobal("Persienne", "100");
 	fibaro:call(74, "setValue2", "100");
 	fibaro:call(76, "setValue2", "100");
-	fibaro:call(48, "setValue2", "100");
+	fibaro:call(661, "setValue2", "100");
 	fibaro:setGlobal("AutoPersi", "Nei");
 	fibaro:setGlobal("VentPersienne", "Release");
 	fibaro:call(74, "open");
 	fibaro:call(76, "open");
-	fibaro:call(48, "open");
+	fibaro:call(661, "open");
 	setTimeout(function()
 		fibaro:startScene(85);
       -- Etter 120000 kjøres scenen "persienne opp av"
