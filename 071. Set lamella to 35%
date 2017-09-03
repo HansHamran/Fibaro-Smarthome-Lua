@@ -22,7 +22,7 @@ startSource["type"] == "other"
 then
 	fibaro:call(74, "setValue2", "35");
 	fibaro:call(76, "setValue2", "35");
-	fibaro:call(48, "setValue2", "35");
+	fibaro:call(661, "setValue2", "35");
 	fibaro:setGlobal("Persienne", "35");
 	fibaro:setGlobal("VentPersienne", "Hold");
 	setTimeout(function()
