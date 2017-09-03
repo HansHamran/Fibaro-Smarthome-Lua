@@ -96,10 +96,10 @@ then
 	fibaro:setGlobal("Persienne", "100");
 	fibaro:call(74, "setValue2", "100");
 	fibaro:call(76, "setValue2", "100");
-	fibaro:call(48, "setValue2", "100");
+	fibaro:call(661, "setValue2", "100");
 	fibaro:call(74, "open");
 	fibaro:call(76, "open");
-	fibaro:call(48, "open");
+	fibaro:call(661, "open");
 
 	while checkSensorArmed() do
 	  Debug( 'red', 'Alarm er fremdeles aktivert.')
