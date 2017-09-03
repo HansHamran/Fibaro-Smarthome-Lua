@@ -106,7 +106,7 @@ function openEscapeRoute()
     fibaro:debug("Åpner persienner")
 	fibaro:call(74, "open");
 	fibaro:call(76, "open");
-	fibaro:call(48, "open");
+	fibaro:call(661, "open");
     fibaro:debug('Låser opp døra.')
 	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(441, "value")) == 0)
     then
