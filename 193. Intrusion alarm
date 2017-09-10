@@ -4,7 +4,7 @@
 --]]
 
 -- Bevegelsesdektorer og dør/vindusensorer
-local sensorID = {24,430,639,422,444,210,343,650,481}
+local sensorID = {24,430,639,422,444,210,343,667,481}
 
 -- Sirene
 -- local sireneID = {349} -- LYS test
@@ -124,7 +124,7 @@ then
   	if fibaro:getGlobal("HoldStueVarme") ~= "Nei" then
     fibaro:setGlobal("HoldStueVarme", "Nei") end
 
-	  fibaro:startScene(172); -- Kjører on-off clock
+	fibaro:startScene(172); -- Kjører on-off clock
     fibaro:setGlobal("Innbruddsalarm", "false")
   	fibaro:setGlobal("Simu_presence", "Off")
 
@@ -134,3 +134,6 @@ then
 	Debug("white", "Alarm avsluttet")
 
 end
+
+
+
