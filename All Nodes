@@ -52,9 +52,9 @@
 169	Lys nedre gang kjeller
 263	Lys trapp til kjeller
 336	VD termostat kjellergang
-650	Bevegelse kjellergang
-651	Temperatur bevegelse kjellergang
-652	Luxmåler kjellergang
+667	Bevegelse kjellergang (Old 650)
+668	Temperatur bevegelse kjellergang
+669	Luxmåler kjellergang
 526	Stikk sirene kjellergang
 	
 	Spillrom
