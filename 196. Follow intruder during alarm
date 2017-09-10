@@ -14,15 +14,15 @@
 210 armed
 343 value
 343 armed
-650 value
-650 armed
+667 value
+667 armed
 601 value
 601 armed
 %% globals
 --]]
 
 -- IDs sensor
-local sensorID = {24, 430, 639, 422, 444, 210, 343, 650, 601}
+local sensorID = {24, 430, 639, 422, 444, 210, 343, 667, 601}
 
 local phoneID = {448, 9, 102} -- ID der Handys
 
