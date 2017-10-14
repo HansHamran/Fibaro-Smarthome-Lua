@@ -17,6 +17,9 @@ then
 	fibaro:call(63, "setValue", "40");
 	fibaro:call(289, "setValue", "50");
 	fibaro:call(293, "setValue", "70");
+ 	 fibaro:call(267, "setValue", "25")
 	fibaro:call(512, "turnOn");
 end
+
+
 
