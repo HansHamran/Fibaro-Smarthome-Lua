@@ -1,0 +1,29 @@
+--[[
+%% autostart
+%% properties
+30 value
+%% events
+%% globals
+--]]
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( tonumber(fibaro:getValue(30, "value")) > 26 )
+and
+ ( tonumber(fibaro:getValue(572, "value")) == 0 )
+and
+ ( tonumber(fibaro:getValue(33, "value")) < 20 )
+and
+ ( fibaro:getGlobalValue("Varmstue") == "false" )
+or
+startSource["type"] == "other"
+)
+then
+  	fibaro:call(572, "turnOn");
+  	fibaro:sleep(20*1000);
+  	fibaro:call(572, "turnOff");
+	fibaro:setGlobal("Varmstue", "true");
+  	local melding = ("Stua er " .. fibaro:getValue(30, "value") .. " grader. Tilsynelatende er ovnene av. Ovnene er nå slått på og av.")
+	fibaro:call(448,'sendPush', melding);
+    fibaro:call(2, "sendEmail", "Stua er varm", melding); -- Mail Hans Olav
+end
