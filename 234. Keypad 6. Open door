@@ -2,7 +2,7 @@
 %% properties
 %% weather
 %% events
-648 CentralSceneEvent 5
+648 CentralSceneEvent 6
 %% globals
 --]]
 
@@ -13,6 +13,5 @@ or
 startSource["type"] == "other"
 )
 then
-if fibaro:countScenes() > 1 then fibaro:abort() end
 fibaro:startScene(111);
 end
