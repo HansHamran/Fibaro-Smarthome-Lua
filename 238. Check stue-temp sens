@@ -1,0 +1,43 @@
+--[[
+%% autostart
+%% properties
+%% events
+%% globals
+RunClock
+--]]
+
+
+local startSource = fibaro:getSourceTrigger();
+if (
+ ( fibaro:getGlobalValue("RunClock") == "Ja" )
+or
+startSource["type"] == "other"
+
+)
+then
+  		if fibaro:countScenes() > 1 then fibaro:abort() end
+  		--fibaro:debug("Global " .. fibaro:getGlobalValue("Stuetemp"));
+  		fibaro:setGlobal("Stuetemp", 1)
+		while fibaro:getGlobalValue("RunClock") == "Ja" do
+			local difference = fibaro:getValue(30, "value")-fibaro:getValue(365, "value")
+			--fibaro:debug(difference)
+    	--fibaro:debug("Global " .. fibaro:getGlobalValue("Stuetemp"));
+    	--fibaro:debug("Sensor " .. tonumber(fibaro:getValue(30, "value")));
+
+				if
+				( tonumber(fibaro:getGlobalValue("Stuetemp")) == tonumber(fibaro:getValue(30, "value"))
+				and (
+				(tonumber(difference) > 2 or tonumber(difference) < -2)) 
+				)
+						then
+        					local melding = ("Stuetemp er låst på " .. fibaro:getValue(30, "value") .. " grader. Røyktemp er " .. fibaro:getValue(365, "value") .. " grader.")
+								fibaro:call(448,'sendPush', melding); -- HO mobil
+  	 							fibaro:call(2, "sendEmail", "Låst temp", melding); -- Mail Hans Olav
+								
+					else
+							fibaro:setGlobal("Stuetemp", tonumber(fibaro:getValue(30, "value")) )	
+				end
+		fibaro:sleep(2*60*60000)
+		end
+
+end
