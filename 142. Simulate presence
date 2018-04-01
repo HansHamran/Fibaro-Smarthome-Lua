@@ -93,7 +93,7 @@
        if (os.time() >= endtime) or (fibaro:getGlobal("Simu_presence") == "Off") or (fibaro:getGlobal("SunSet") == "Nei") or (os.date("%H:%M", os.time()) <= fibaro:getValue(1,'sunriseHour')) then
     	  -- PushMessage("Stopped by B")
     	  -- StandardDebug("Stopped by B")
-			if  tonumber(fibaro:getValue(447, "armed")) > 0 
+			if  tonumber(fibaro:getValue(639, "armed")) > 0 
         	then
       		SimulatorPresenceEngine:TurnOff(ID_devices_lights)
         	end
@@ -126,7 +126,7 @@
         --turn Off all lights
         --pushMessage("Stopped by A")
   		--StandardDebug("Stopped by A")
-			if  tonumber(fibaro:getValue(447, "armed")) > 0 
+			if  tonumber(fibaro:getValue(639, "armed")) > 0 
         	then
       		SimulatorPresenceEngine:TurnOff(ID_devices_lights)
         	end
@@ -145,4 +145,3 @@ if ((fibaro:getGlobal("Simu_presence") == "On") and os.time() <= endtime and fib
     	--pushMessage("Turned on " .. fibaro:getName(289) .. " , " .. fibaro:getName(51) .. " and " .. fibaro:getName(63))
   		SimulatorPresenceEngine:Launch(); --launch the simulation when virtual device is on, and the current time is triggered.
 end
-
