@@ -15,7 +15,7 @@ then
 	fibaro:call(289, "setValue", "50");
 	fibaro:call(512, "turnOn");
 	fibaro:call(55, "setValue", "80");
-	fibaro:call(51, "setValue", "20");
+	fibaro:call(51, "setValue", "60");
 	fibaro:call(63, "setValue", "20");
     fibaro:call(267, "setValue", "15")
 	fibaro:setGlobal("MorgenLysKjokken", "Done");
