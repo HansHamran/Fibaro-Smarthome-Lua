@@ -11,7 +11,7 @@ VentPersienne
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(206, "value")) < 2000  and  tonumber(fibaro:getValue(212, "value")) < 150  and  tonumber(fibaro:getValue(205, "value")) < 30 )
+ ( tonumber(fibaro:getValue(206, "value")) < 2000  and  tonumber(fibaro:getValue(212, "value")) < 150  and  tonumber(fibaro:getValue(205, "value")) < 28 )
 and
  ( fibaro:getGlobalValue("AutoPersi") == "Ja"  and  fibaro:getGlobalValue("VentPersienne") == "Release"  and  fibaro:getGlobalValue("Persienneopp") == "Nei" )
 or
