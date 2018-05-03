@@ -161,9 +161,12 @@
 367	Sirene
 	
 	Utebod
-204	Bevegelse utebod
-205	Temperatur utebod
-206	Lux utebod
+698	Bevegelse utebod A
+699	Temperatur utebod A
+700	Lux utebod A
+704	Bevegelse utebod B
+705	Temperatur utebod B
+706	Lux utebod B
 296	Lys utebod
 522	Røyk utebod
 523	Varmedetektor utebod
