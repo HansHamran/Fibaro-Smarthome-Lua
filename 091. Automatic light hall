@@ -10,16 +10,20 @@ local startSource = fibaro:getSourceTrigger();
 if fibaro:countScenes() > 1 then fibaro:abort() end
 if (
  ( tonumber(fibaro:getValue(343, "value")) > 0  
-      and  tonumber(fibaro:getValue(206, "value")) < 1800   
-      and  tonumber(fibaro:getValue(205, "value")) < 30  
+      and  tonumber(fibaro:getValue(700, "value")) < 1800   
+      and  tonumber(fibaro:getValue(699, "value")) < 30
+      and  tonumber(fibaro:getValue(706, "value")) < 1800   
+      and  tonumber(fibaro:getValue(705, "value")) < 30     
       and  fibaro:getGlobalValue("Kveld") == "Ja"  
       and  fibaro:getGlobalValue("AutolysOFF") == "Nei"  
       and  tonumber(fibaro:getValue(251, "value")) <= 34
 		)
 or
 (startSource["type"] == "other"
-      and  tonumber(fibaro:getValue(206, "value")) < 1800   
-      and  tonumber(fibaro:getValue(205, "value")) < 30  
+      and  tonumber(fibaro:getValue(700, "value")) < 1800   
+      and  tonumber(fibaro:getValue(699, "value")) < 30
+      and  tonumber(fibaro:getValue(706, "value")) < 1800   
+      and  tonumber(fibaro:getValue(705, "value")) < 30  
       and  fibaro:getGlobalValue("Kveld") == "Ja"  
       and  fibaro:getGlobalValue("AutolysOFF") == "Nei"  
       and  tonumber(fibaro:getValue(251, "value")) <= 34
@@ -40,3 +44,6 @@ then
     		fibaro:startScene(179);
     	end
 end
+
+
+
