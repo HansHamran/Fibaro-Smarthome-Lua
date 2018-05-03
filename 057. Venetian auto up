@@ -1,9 +1,11 @@
 --[[
 %% autostart
 %% properties
-206 value
+700 value
+706 value
 212 value
-205 value
+699 value
+705 value
 %% events
 %% globals
 VentPersienne
@@ -11,9 +13,16 @@ VentPersienne
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(206, "value")) < 2000  and  tonumber(fibaro:getValue(212, "value")) < 150  and  tonumber(fibaro:getValue(205, "value")) < 28 )
+ ( tonumber(fibaro:getValue(700, "value")) < 2000  
+      and tonumber(fibaro:getValue(706, "value")) < 2000
+      and  tonumber(fibaro:getValue(212, "value")) < 150  
+      and  tonumber(fibaro:getValue(699, "value")) < 30
+      and  tonumber(fibaro:getValue(705, "value")) < 30
+    )
 and
- ( fibaro:getGlobalValue("AutoPersi") == "Ja"  and  fibaro:getGlobalValue("VentPersienne") == "Release"  and  fibaro:getGlobalValue("Persienneopp") == "Nei" )
+ ( fibaro:getGlobalValue("AutoPersi") == "Ja"  
+      and  fibaro:getGlobalValue("VentPersienne") == "Release"  
+      and  fibaro:getGlobalValue("Persienneopp") == "Nei" )
 or
 startSource["type"] == "other"
 )
