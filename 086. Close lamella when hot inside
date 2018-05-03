@@ -13,7 +13,8 @@ if (
  ( fibaro:getGlobalValue("AutoPersi") == "Ja"  
       and  fibaro:getGlobalValue("Persienneopp") == "Nei"  
       and  fibaro:getGlobalValue("VentPersienne") == "Release"  
-      and  tonumber(fibaro:getValue(206, "value")) > 7000  
+      and  tonumber(fibaro:getValue(700, "value")) > 7000  
+      and  tonumber(fibaro:getValue(706, "value")) > 7000 
       and  tonumber(fibaro:getValue(30, "value")) > 27  
       and  fibaro:getGlobalValue("Persienne") ~= "0" )
 or
