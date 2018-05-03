@@ -1,14 +1,18 @@
 --[[
 %% autostart
 %% properties
-206 value
+700 value
+706 value
 %% events
 %% globals
 --]]
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(206, "value")) > 6000  and  fibaro:getGlobalValue("AutolysOFF") == "Nei"  and  fibaro:getGlobalValue("Kveld") == "Nei" )
+ ( tonumber(fibaro:getValue(700, "value")) > 6000  
+      and tonumber(fibaro:getValue(706, "value")) > 6000
+      and  fibaro:getGlobalValue("AutolysOFF") == "Nei"  
+      and  fibaro:getGlobalValue("Kveld") == "Nei" )
 or
 startSource["type"] == "other"
 )
@@ -32,3 +36,5 @@ then
 	fibaro:call(236, "turnOff");
 	fibaro:call(585, "turnOff");
 end
+
+
