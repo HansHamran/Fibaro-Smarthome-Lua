@@ -32,7 +32,6 @@ elseif (tostring(button_source["keyAttribute"]) == "Pressed5") then
   
   -- slår av innbruddsalarm
 	fibaro:call(641, "setArmed", "0");
-	fibaro:call(204, "setArmed", "0");
 	fibaro:call(210, "setArmed", "0");
 	fibaro:call(343, "setArmed", "0");
 	fibaro:call(667, "setArmed", "0");
@@ -62,3 +61,8 @@ elseif (tostring(button_source["keyAttribute"]) == "HeldDown") then
 elseif (tostring(button_source["keyAttribute"]) == "Released") then
   	fibaro:setGlobal("Panikkalarm", "false")
 end
+
+
+
+
+
