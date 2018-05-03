@@ -13,7 +13,8 @@ if (
       and  tonumber(fibaro:getValue(67, "value")) == 0  
       and  tonumber(fibaro:getValue(71, "value")) == 0  
       and  tonumber(fibaro:getValue(63, "value")) == 0  
-      and  tonumber(fibaro:getValue(206, "value")) < 1500  
+      and  tonumber(fibaro:getValue(700, "value")) < 1500 
+      and  tonumber(fibaro:getValue(706, "value")) < 1500      
       and  tonumber(fibaro:getValue(210, "value")) > 0  
       and  tonumber(fibaro:getValue(205, "value")) < 30  
       and  fibaro:getGlobalValue("Kveld") == "Ja"  
