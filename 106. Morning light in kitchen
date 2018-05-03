@@ -8,7 +8,12 @@
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(206, "value")) < 1800  and  tonumber(fibaro:getValue(210, "value")) > 0  and  fibaro:getGlobalValue("Ferie") == "Nei"  and  fibaro:getGlobalValue("Morgen") == "Ja"  and  fibaro:getGlobalValue("MorgenLysKjokken") == "Venter" )
+ ( tonumber(fibaro:getValue(700, "value")) < 1800  
+      and  tonumber(fibaro:getValue(706, "value")) < 1800
+      and  tonumber(fibaro:getValue(210, "value")) > 0  
+      and  fibaro:getGlobalValue("Ferie") == "Nei"  
+      and  fibaro:getGlobalValue("Morgen") == "Ja"  
+      and  fibaro:getGlobalValue("MorgenLysKjokken") == "Venter" )
 )
 then
 	fibaro:call(293, "setValue", "50");
