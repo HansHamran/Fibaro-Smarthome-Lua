@@ -1,14 +1,18 @@
 --[[
 %% autostart
 %% properties
-206 value
+700 value
+706 value
 %% events
 %% globals
 --]]
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(206, "value")) > 15000  and  fibaro:getGlobalValue("AutoPersi") == "Nei"  and  fibaro:getGlobalValue("Persienneopp") == "Nei" )
+ ( tonumber(fibaro:getValue(700, "value")) > 15000 
+      and tonumber(fibaro:getValue(706, "value")) > 15000
+      and  fibaro:getGlobalValue("AutoPersi") == "Nei"  
+      and  fibaro:getGlobalValue("Persienneopp") == "Nei" )
 or
 startSource["type"] == "other"
 )
