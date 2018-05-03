@@ -16,7 +16,8 @@ if (
       and  tonumber(fibaro:getValue(700, "value")) < 1500 
       and  tonumber(fibaro:getValue(706, "value")) < 1500      
       and  tonumber(fibaro:getValue(210, "value")) > 0  
-      and  tonumber(fibaro:getValue(205, "value")) < 30  
+      and  tonumber(fibaro:getValue(699, "value")) < 30  
+      and  tonumber(fibaro:getValue(705, "value")) < 30
       and  fibaro:getGlobalValue("Kveld") == "Ja"  
       and  fibaro:getGlobalValue("AutolysOFF") == "Nei"  
       and  fibaro:getGlobalValue("Kveldslysstue") == "Venter" )
