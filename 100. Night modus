@@ -117,6 +117,7 @@ then
         )
     then
     	fibaro:call(255, "turnOn");
+    	fibaro:setGlobal("AutolysOFF", "Nei");
     	fibaro:call(448, "sendPush", "En eller flere dører er ikke lukket.");
     	fibaro:call(102, "sendPush", "En eller flere dører er ikke lukket.");
     else
