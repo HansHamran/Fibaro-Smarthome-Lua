@@ -9,8 +9,8 @@
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(700, "value")) > 15000 
-      and tonumber(fibaro:getValue(706, "value")) > 15000
+ ( tonumber(fibaro:getValue(700, "value")) > 5200 
+      and tonumber(fibaro:getValue(706, "value")) > 5200
       and  fibaro:getGlobalValue("AutoPersi") == "Nei"  
       and  fibaro:getGlobalValue("Persienneopp") == "Nei" )
 or
