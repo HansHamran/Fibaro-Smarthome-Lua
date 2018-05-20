@@ -18,12 +18,15 @@ and
 or
 startSource["type"] == "other"
 )
-then
+then	
+  	fibaro:setGlobal("Varmstue", "true");
   	fibaro:call(572, "turnOn");
   	fibaro:sleep(20*1000);
   	fibaro:call(572, "turnOff");
-	fibaro:setGlobal("Varmstue", "true");
+
   	local melding = ("Stua er " .. fibaro:getValue(30, "value") .. " grader. Tilsynelatende er ovnene av. Ovnene er nå slått på og av.")
 	fibaro:call(448,'sendPush', melding);
     fibaro:call(2, "sendEmail", "Stua er varm", melding); -- Mail Hans Olav
 end
+
+
