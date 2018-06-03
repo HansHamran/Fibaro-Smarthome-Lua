@@ -13,11 +13,21 @@ VentPersienne
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(700, "value")) < 2000  
-      and tonumber(fibaro:getValue(706, "value")) < 2000
-      and  tonumber(fibaro:getValue(212, "value")) < 150  
-      and  tonumber(fibaro:getValue(699, "value")) < 30
-      and  tonumber(fibaro:getValue(705, "value")) < 30
+ ( tonumber(fibaro:getValue(700, "value")) < 1200  
+      and tonumber(fibaro:getValue(706, "value")) < 1200
+      and  tonumber(fibaro:getValue(212, "value")) < 250  
+      and (
+        tonumber(fibaro:getValue(699, "value"))
+        -
+        tonumber(fibaro:getValue(524, "value"))
+        )
+      	> 4
+      and (
+        tonumber(fibaro:getValue(705, "value"))
+        -
+        tonumber(fibaro:getValue(524, "value"))
+        )
+      	> 4
     )
 and
  ( fibaro:getGlobalValue("AutoPersi") == "Ja"  
@@ -29,5 +39,3 @@ startSource["type"] == "other"
 then
 	fibaro:startScene(54);
 end
-
-
