@@ -21,13 +21,13 @@ if (
         -
         tonumber(fibaro:getValue(524, "value"))
         )
-      	> 4
+      	< 5
       and (
         tonumber(fibaro:getValue(705, "value"))
         -
         tonumber(fibaro:getValue(524, "value"))
         )
-      	> 4
+      	< 5
     )
 and
  ( fibaro:getGlobalValue("AutoPersi") == "Ja"  
