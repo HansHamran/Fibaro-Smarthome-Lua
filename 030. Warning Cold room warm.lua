@@ -15,6 +15,9 @@ startSource["type"] == "other"
 )
 then
     local melding = ("Kjølerommet er " .. fibaro:getValue(32, "value") .. " grader")
-	fibaro:call(448,'sendPush', melding);
+	fibaro:call(710,'sendPush', melding);
     fibaro:setGlobal("VarmtKjolerom", "Ja")
 end
+
+
+
