@@ -31,7 +31,7 @@ then
 				)
 						then
         					local melding = ("Stuetemp er låst på " .. fibaro:getValue(30, "value") .. " grader. Røyktemp er " .. fibaro:getValue(365, "value") .. " grader.")
-								fibaro:call(448,'sendPush', melding); -- HO mobil
+								fibaro:call(710,'sendPush', melding); -- HO mobil
   	 							fibaro:call(2, "sendEmail", "Låst temp", melding); -- Mail Hans Olav
 								
 					else
