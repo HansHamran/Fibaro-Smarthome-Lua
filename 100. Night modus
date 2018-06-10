@@ -118,8 +118,8 @@ then
     then
     	fibaro:call(255, "turnOn");
     	fibaro:setGlobal("AutolysOFF", "Nei");
-    	fibaro:call(448, "sendPush", "En eller flere dører er ikke lukket.");
-    	fibaro:call(102, "sendPush", "En eller flere dører er ikke lukket.");
+    	fibaro:call(710, "sendPush", "En eller flere dører er ikke lukket.");
+    	fibaro:call(711, "sendPush", "En eller flere dører er ikke lukket.");
     else
   
   	-- sjekker at dørslå er i før alarm settes på (gir det ett minutt)
@@ -139,8 +139,8 @@ then
       	fibaro:setGlobal("Hjemmealarm", "Ja")
   		else
   		fibaro:call(255, "turnOn");
-   		fibaro:call(448, "sendPush", "Får ikke låst inngangsdøra.");
-    	fibaro:call(102, "sendPush", "Får ikke låst inngangsdøra.");
+   		fibaro:call(710, "sendPush", "Får ikke låst inngangsdøra.");
+    	fibaro:call(711, "sendPush", "Får ikke låst inngangsdøra.");
 		end
     end
 end
