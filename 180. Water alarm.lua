@@ -1,83 +1,83 @@
 --[[
 %% autostart
 %% properties
-470 value
-474 value
-505 value
 %% events
 %% globals
+RunClock
 --]]
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(470, "value")) > 0  or  tonumber(fibaro:getValue(474, "value")) > 0
-    or  tonumber(fibaro:getValue(505, "value")) > 0)
+ ( fibaro:getGlobalValue("RunClock") == "Ja" )
 or
 startSource["type"] == "other"
 )
 then
-    if (startSource["type"] == "property")
-  	then
-  		local sensorID = tonumber(startSource["deviceID"])
-  		local room = fibaro:getRoomNameByDeviceID(sensorID)
-  		local descr = fibaro:getValue(sensorID, "userDescription")
+
+-- Code is based on script from Mike Carter, budda
+  -- added fix for removed devices
+
+
+local TotalDevices = 1000 --max nr of devices 
+
+while true do 
+
+  local timeNow = os.date('*t') 
+  local day = timeNow['day'] 
+  local month = timeNow['month'] 
+  local d_status = "ok"
+  
+  local i = 1 
+  local anydead = 0 
+  while i < TotalDevices do 
+    --check if any dead 
+    local status = fibaro:getValue(i, 'dead'); 
+    if status ~= nil then
       
-  		local subject = "Rabakken5" -- passord SMS
-  		local message = "Vannlekkasje i Rabakken 5, " ..descr.. " (" ..room.. ") er oppdaget."
-    	fibaro:debug(message)
-    	fibaro:call(448, "sendPush", message) -- HOs mobil
-    	fibaro:call(102, "sendPush", message) -- marits mobil
-    	fibaro:call(2, "sendEmail", subject, message); -- Mail Hans Olav
-   		fibaro:call(515, "sendEmail", subject, message); -- SMS Nokas
-    	fibaro:call(516, "sendEmail", subject, message); -- SMS Hans Olav
- 	end
+ 	if status >= "1" then
+        local d_status = "dead"
+        else
+        local d_status = "ok"
+    end
+    local name = fibaro:getName(i); 
+    local room = fibaro:getRoomNameByDeviceID(i); 
+    -- fibaro:debug(i.." "..name.." "..room.." "..d_status);
   
-  	-- lukker krana om denne er åpen
-	if ( tonumber(fibaro:getValue(656, "value")) > 0 )
-		then
-		fibaro:call(656, "turnOff");
-	end
+    
+    if status >= "1" then 
+      local melding = (day.."/"..month..":"..i..' DEAD, trying to re-start '..name..":"..room);
+      fibaro:debug(melding); 
+      --fibaro:call(448,'sendPush', melding);
+	  fibaro:call(i, "wakeUpDeadDevice")
+      fibaro:sleep(50000) --check again in 50 sec 
+      status = fibaro:getValue(i, 'dead'); 
+      if status >= "1" then
+        anydead = 1;
+        local melding = (day.."/"..month..":"..i..' DEAD, re-start failed '..name..":"..room);
+        fibaro:debug(melding)
+        fibaro:call(710,'sendPush', melding);
+      else
+        local melding = (day.."/"..month..":"..i..' succeeded restart '..name..":"..room);
+        fibaro:debug(melding)
+        --fibaro:call(710,'sendPush', melding);
+      end
+      else
+      end
+    end
+    i = i + 1
+
+  end 
   
-  	fibaro:setGlobal("Vannlekkasje", "Ja");
-    
-    
-    -- sjekker at hovedkran faktisk ble lukket
-    	local teller = 1
-    	while ( tonumber(fibaro:getValue(656, "value")) > 0 and teller < 60) do
-    	fibaro:sleep(1000)
-    	teller = teller + 1
-    	end
-    	if tonumber(fibaro:getValue(656, "value")) == 0
-      	then
-      		local subject = "Rabakken5" -- passord SMS
-  			local message = "Vannlekkasje i Rabakken 5. Hovedkran er automatisk stengt."
-        	fibaro:debug(message)
-    		fibaro:call(448, "sendPush", message) -- HOs mobil
-    		fibaro:call(102, "sendPush", message) -- marits mobil
-    		fibaro:call(2, "sendEmail", subject, message); -- Mail Hans Olav
-   			fibaro:call(515, "sendEmail", subject, message); -- SMS Nokas
-    		fibaro:call(516, "sendEmail", subject, message); -- SMS Hans Olav
-      	else
-      		local subject = "Rabakken5" -- passord SMS
-  			local message = "Vannlekkasje i Rabakken 5. Hovedkran kunne IKKE stenges. Noe gikk galt."
-            fibaro:debug(message)
-    		fibaro:call(448, "sendPush", message) -- HOs mobil
-    		fibaro:call(102, "sendPush", message) -- marits mobil
-    		fibaro:call(2, "sendEmail", subject, message); -- Mail Hans Olav
-   			fibaro:call(515, "sendEmail", subject, message); -- SMS Nokas
-    		fibaro:call(516, "sendEmail", subject, message); -- SMS Hans Olav
-      	end
-        
-  	fibaro:setGlobal("Lydvarsel", "På")
-  	fibaro:sleep(100)
-    while fibaro:getGlobalValue("Lydvarsel") == "På" do
-    	fibaro:call(367, "turnOn");
-    	fibaro:sleep(10)
-   	 	fibaro:call(367, "turnOff");
-  		fibaro:sleep(600000);
-	end
+  if anydead == 0 then
+    --fibaro:debug('Nobody is dead :-) ') 
+  else 
+    fibaro:debug('A device is really DEAD') 
+    fibaro:call(2, "sendEmail", "Fibaro device is dead", melding); -- Mail Hans Olav
+  end 
+  
+  -- abort any unnecesary scenes started 
+  if fibaro:countScenes() > 1 then fibaro:abort() end 
+  
+  fibaro:sleep(15*60000) --repeat every 60 minutes 
 end
-
-
-
-
+  end
