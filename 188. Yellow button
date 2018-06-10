@@ -50,8 +50,8 @@ elseif (tostring(button_source["keyAttribute"]) == "HeldDown") then
         	local subject = "Rabakken5" -- passord SMS
   			local message = "Panikkalarm er utlost hos Hamran/Nordhagen i Rabakken 5, 0880 Oslo."
             fibaro:debug(message)
-    		fibaro:call(448, "sendPush", message) -- HOs mobil
-    		-- fibaro:call(102, "sendPush", message) -- marits mobil
+    		fibaro:call(710, "sendPush", message) -- HOs mobil
+    		-- fibaro:call(711, "sendPush", message) -- marits mobil
     		fibaro:call(2, "sendEmail", subject, message); -- Mail Hans Olav
    			fibaro:call(515, "sendEmail", subject, message); -- SMS Nokas
     		fibaro:call(516, "sendEmail", subject, message); -- SMS Hans Olav
