@@ -25,7 +25,7 @@ then
   	fibaro:call(572, "turnOff");
 
   	local melding = ("Stua er " .. fibaro:getValue(30, "value") .. " grader. Tilsynelatende er ovnene av. Ovnene er nå slått på og av.")
-	fibaro:call(448,'sendPush', melding);
+	fibaro:call(710,'sendPush', melding);
     fibaro:call(2, "sendEmail", "Stua er varm", melding); -- Mail Hans Olav
 end
 
