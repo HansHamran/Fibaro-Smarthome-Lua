@@ -24,7 +24,7 @@
 -- IDs sensor
 local sensorID = {24, 430, 639, 422, 444, 210, 343, 667, 601}
 
-local phoneID = {448, 9, 102} -- ID der Handys
+local phoneID = {710, 711} -- ID der Handys
 
 local countID = 500
 
