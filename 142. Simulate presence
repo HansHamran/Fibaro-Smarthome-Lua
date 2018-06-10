@@ -19,7 +19,7 @@
     local rndmaxtime = 20                                -- random time of light change in minutes --> here each device is on max 20min
     local ID_devices_lights = {51, 55, 71, 63, 67, 247, 259, 227, 512, 275, 289}                 -- IDs of lights to use in simulation
     local activatePush = true;                          -- activate push when simulation starts and stops
-    local ID_Smartphone = 448;                           -- ID of your smartphone   
+    local ID_Smartphone = 710;                           -- ID of your smartphone   
 
 
     -- 3 variable needed, Simu_presence(predefined ("On" and "Off") and overrideSimuSunset ("0" and "1") and SunSet ("Ja" and "Nei")
@@ -145,3 +145,4 @@ if ((fibaro:getGlobal("Simu_presence") == "On") and os.time() <= endtime and fib
     	--pushMessage("Turned on " .. fibaro:getName(289) .. " , " .. fibaro:getName(51) .. " and " .. fibaro:getName(63))
   		SimulatorPresenceEngine:Launch(); --launch the simulation when virtual device is on, and the current time is triggered.
 end
+
