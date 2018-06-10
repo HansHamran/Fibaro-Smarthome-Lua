@@ -55,11 +55,11 @@ while true do
         anydead = 1;
         local melding = (day.."/"..month..":"..i..' DEAD, re-start failed '..name..":"..room);
         fibaro:debug(melding)
-        fibaro:call(448,'sendPush', melding);
+        fibaro:call(710,'sendPush', melding);
       else
         local melding = (day.."/"..month..":"..i..' succeeded restart '..name..":"..room);
         fibaro:debug(melding)
-        --fibaro:call(448,'sendPush', melding);
+        --fibaro:call(710,'sendPush', melding);
       end
       else
       end
@@ -79,5 +79,5 @@ while true do
   if fibaro:countScenes() > 1 then fibaro:abort() end 
   
   fibaro:sleep(15*60000) --repeat every 60 minutes 
+end
   end
- end
