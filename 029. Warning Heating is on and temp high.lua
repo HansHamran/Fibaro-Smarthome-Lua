@@ -18,7 +18,7 @@ startSource["type"] == "other"
 )
 then
   	local melding = ("Stua er " .. fibaro:getValue(30, "value") .. " grader. Likevel står ovnene på.")
-	fibaro:call(448,'sendPush', melding);
+	fibaro:call(710,'sendPush', melding);
     fibaro:call(2, "sendEmail", "Advarsel Stua er varm", melding); -- Mail Hans Olav
 end
 
