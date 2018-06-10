@@ -35,7 +35,7 @@ local smokeID = {613, 614, 593, 594, 597, 598, 363, 364, 139, 140, 412, 413, 690
 local sireneID = {367, 526, 530} -- ID der Sirene(n)
 
 -- Einstellungen für Push-Benachrichtigungen (Wenn keine IDs eingetragen sind, wird die Funktion nicht genutzt)
-local phoneID = {448, 9, 102} -- ID der Handys
+local phoneID = {710, 711} -- ID der Handys
 
 -- Einstellungen für Notfallbeleuchtung (Wenn keine IDs eingetragen sind, wird die Funktion nicht genutzt)
 local lightID = {51, 55, 59, 63, 67, 71, 267, 176, 247, 251, 585, 152, 263, 189, 259, 255, 164, 271, 227, 275, 281, 289, 293, 379, 375} -- ID der Licht-Module
