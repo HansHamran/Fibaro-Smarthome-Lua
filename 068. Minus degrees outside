@@ -15,7 +15,10 @@ startSource["type"] == "other"
 )
 then
   	local melding = ("Nå er det " .. fibaro:getValue(33, "value") .. " grader i Rabakken.")
-	fibaro:call(448,'sendPush', melding);
+	fibaro:call(710,'sendPush', melding);
     fibaro:call(2, "sendEmail", "Minusgrader i Rabakken", melding); -- Mail Hans Olav
 	fibaro:setGlobal("MinusRabakken", "Ja");
 end
+
+
+
