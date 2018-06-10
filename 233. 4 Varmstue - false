@@ -17,6 +17,8 @@ startSource["type"] == "other"
 then
 	fibaro:setGlobal("Varmstue", "false");
   	local melding = ("Stua er " .. fibaro:getValue(30, "value") .. " grader. Alt ser igjen greit ut.")
-	fibaro:call(448,'sendPush', melding);
+	fibaro:call(710,'sendPush', melding);
     fibaro:call(2, "sendEmail", "Stua er varm", melding); -- Mail Hans Olav
 end
+
+
