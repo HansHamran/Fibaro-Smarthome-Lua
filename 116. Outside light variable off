@@ -9,8 +9,8 @@
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(700, "value")) > 500 
-    and tonumber(fibaro:getValue(706, "value")) > 500
+ ( tonumber(fibaro:getValue(700, "value")) > 50 
+    and tonumber(fibaro:getValue(706, "value")) > 50
     )
 or
 startSource["type"] == "other"
