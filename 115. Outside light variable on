@@ -11,8 +11,8 @@
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(700, "value")) < 200  
-      and tonumber(fibaro:getValue(706, "value")) < 200
+ ( tonumber(fibaro:getValue(700, "value")) < 100  
+      and tonumber(fibaro:getValue(706, "value")) < 100
       and tonumber(fibaro:getValue(705, "value")) < 31 
       and  tonumber(fibaro:getValue(699, "value")) < 31 )
 or
