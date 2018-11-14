@@ -20,7 +20,7 @@ if (
 then
     -- Låser ytterdøra hvis ulåst
 	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(441, "value")) == 1)
-    	then fibaro:call(684, "unsecure");
+    	then fibaro:call(731, "unsecure");
 	end
   	-- sjekker at dørslå er i (gir det ett minutt)
 	local teller = 1
