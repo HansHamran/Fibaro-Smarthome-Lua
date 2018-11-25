@@ -32,18 +32,18 @@ if fibaro:countScenes() > 1 then fibaro:abort() end
     	end
 
     	-- locking door
-	  	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(441, "value")) == 1)
+	  	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(734, "value")) == 1)
 	    then 
 	    fibaro:call(731, "unsecure");
 	    end
     
        	-- Making sure door lock is actually in before turing on intruder alarm
     	local teller = 1
-    	while ( tonumber(fibaro:getValue(441, "value")) == 1 and teller < 60) do
+    	while ( tonumber(fibaro:getValue(734, "value")) == 1 and teller < 60) do
     	fibaro:sleep(1000)
     	teller = teller + 1
     	end
-    		if tonumber(fibaro:getValue(441, "value")) == 0
+    		if tonumber(fibaro:getValue(734, "value")) == 0
       		then
 			fibaro:call(24, "setArmed", "1");
 			fibaro:call(639, "setArmed", "1");
