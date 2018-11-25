@@ -1,6 +1,6 @@
 --[[
 %% properties
-441 value
+734 value
 430 armed
 %% events
 %% globals
@@ -9,7 +9,7 @@
 local startSource = fibaro:getSourceTrigger();
 if fibaro:countScenes() > 1 then fibaro:abort() end
 if (
- ( tonumber(fibaro:getValue(441, "value")) > 0 and ( tonumber(fibaro:getValue(24, "armed")) > 0 )) 
+ ( tonumber(fibaro:getValue(734, "value")) > 0 and ( tonumber(fibaro:getValue(24, "armed")) > 0 )) 
     -- Sjekker om låsebolt låses opp og verandadør oppe har alarmen på
 or
 startSource["type"] == "other"
