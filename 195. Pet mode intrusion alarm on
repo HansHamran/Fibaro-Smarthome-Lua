@@ -27,18 +27,18 @@ if (startSource["type"] == "other") then
     	end
 
     	-- låser dør
-	  	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(441, "value")) == 1)
+	  	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(734, "value")) == 1)
 	    then 
 	    fibaro:call(731, "unsecure");
 	    end
     
        	-- sjekker at dørslå er i før alarm settes på
     	local teller = 1
-    	while ( tonumber(fibaro:getValue(441, "value")) == 1 and teller < 60) do
+    	while ( tonumber(fibaro:getValue(734, "value")) == 1 and teller < 60) do
     	fibaro:sleep(1000)
     	teller = teller + 1
     	end
-    		if tonumber(fibaro:getValue(441, "value")) == 0
+    		if tonumber(fibaro:getValue(734, "value")) == 0
       		then
 			fibaro:call(24, "setArmed", "1");
 			-- fibaro:call(430, "setArmed", "1");
