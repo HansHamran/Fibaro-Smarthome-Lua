@@ -108,7 +108,7 @@ function openEscapeRoute()
 	fibaro:call(76, "open");
 	fibaro:call(661, "open");
     fibaro:debug('Låser opp døra.')
-	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(441, "value")) == 0)
+	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(734, "value")) == 0)
     then
     fibaro:call(731, "secure");
 	end
