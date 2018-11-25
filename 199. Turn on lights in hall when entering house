@@ -1,13 +1,13 @@
 --[[
 %% properties
-441 value
+734 value
 %% events
 %% globals
 --]]
 
 local startSource = fibaro:getSourceTrigger();
 if (
- ( tonumber(fibaro:getValue(441, "value")) > 0 )
+ ( tonumber(fibaro:getValue(734, "value")) > 0 )
 or
 startSource["type"] == "other"
 )
