@@ -3,7 +3,7 @@
 572 value
 %% events
 --]]
-
+ 
 local startSource = fibaro:getSourceTrigger();
 local spill_reset = fibaro:getGlobalValue("Term_spill");
 local play_reset = fibaro:getGlobalValue("Term_playmo");
