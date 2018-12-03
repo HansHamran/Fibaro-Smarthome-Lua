@@ -69,7 +69,7 @@ if fibaro:countScenes() > 1 then fibaro:abort() end
 			fibaro:call(247, "turnOff");
 			fibaro:call(176, "turnOff");
 			fibaro:call(585, "turnOff");
-			fibaro:call(259, "turnOff");
+			-- fibaro:call(259, "turnOff");
 			fibaro:call(263, "turnOff");
 			fibaro:call(152, "turnOff");
 			fibaro:call(189, "turnOff");
