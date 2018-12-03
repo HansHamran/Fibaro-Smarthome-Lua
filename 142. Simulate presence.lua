@@ -17,7 +17,7 @@
     local stop_hour = "23";                             -- Hour when you want simulation to stop. PS Cannot after midnight
     local stop_minute = "45";                      -- Minute of the hour you want simulation to stop
     local rndmaxtime = 20                                -- random time of light change in minutes --> here each device is on max 20min
-    local ID_devices_lights = {51, 55, 71, 63, 67, 247, 259, 227, 512, 275, 289}                 -- IDs of lights to use in simulation
+    local ID_devices_lights = {51, 55, 71, 63, 67, 247, 227, 512, 275, 289}                 -- IDs of lights to use in simulation
     local activatePush = true;                          -- activate push when simulation starts and stops
     local ID_Smartphone = 710;                           -- ID of your smartphone   
 
