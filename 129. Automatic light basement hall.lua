@@ -9,8 +9,8 @@
 local startSource = fibaro:getSourceTrigger();
 if fibaro:countScenes() > 1 then fibaro:abort() end
 if (
- ( tonumber(fibaro:getValue(667, "value")) > 0  
-      and  tonumber(fibaro:getValue(669, "value")) < 250   
+ ( tonumber(fibaro:getValue(745, "value")) > 0  
+      and  tonumber(fibaro:getValue(747, "value")) < 250   
       and  fibaro:getGlobalValue("AutolysOFF") == "Nei"  
       and  tonumber(fibaro:getValue(263, "value")) <= 34  
       and  tonumber(fibaro:getValue(152, "value")) <= 34 
