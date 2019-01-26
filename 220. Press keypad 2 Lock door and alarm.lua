@@ -51,7 +51,7 @@ if fibaro:countScenes() > 1 then fibaro:abort() end
 			fibaro:call(444, "setArmed", "1");
     		fibaro:call(210, "setArmed", "1");
 			fibaro:call(343, "setArmed", "1");
-			fibaro:call(667, "setArmed", "1");
+			fibaro:call(745, "setArmed", "1");
 			fibaro:call(601, "setArmed", "1"); 
       
       		-- Turning off all lightning
