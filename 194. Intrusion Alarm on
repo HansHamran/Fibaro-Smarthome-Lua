@@ -47,7 +47,7 @@ if (startSource["type"] == "other") then
 			fibaro:call(444, "setArmed", "1");
     		fibaro:call(210, "setArmed", "1");
 			fibaro:call(343, "setArmed", "1");
-			fibaro:call(667, "setArmed", "1");
+			fibaro:call(745, "setArmed", "1");
 			fibaro:call(601, "setArmed", "1");       
       
       		-- slå av alt lys
@@ -64,7 +64,7 @@ if (startSource["type"] == "other") then
 			fibaro:call(247, "turnOff");
 			fibaro:call(176, "turnOff");
 			fibaro:call(585, "turnOff");
-			fibaro:call(259, "turnOff");
+			-- fibaro:call(259, "turnOff");
 			fibaro:call(263, "turnOff");
 			fibaro:call(152, "turnOff");
 			fibaro:call(189, "turnOff");
