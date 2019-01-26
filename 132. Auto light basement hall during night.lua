@@ -1,7 +1,7 @@
 --[[
 %% autostart
 %% properties
-667 value
+745 value
 %% events
 %% globals
 --]]
@@ -28,3 +28,4 @@ then
 	fibaro:call(152, "turnOff");
 	fibaro:call(375, "turnOff");
 end
+
