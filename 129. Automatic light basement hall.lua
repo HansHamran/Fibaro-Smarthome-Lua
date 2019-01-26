@@ -1,7 +1,7 @@
 --[[
 %% autostart
 %% properties
-667 value
+745 value
 %% events
 %% globals
 --]]
@@ -21,7 +21,7 @@ startSource["type"] == "other"
 then
   	fibaro:startScene(127);
     	fibaro:sleep(600000)
-    	while tonumber(fibaro:getValue(667, "value")) > 0 do
+    	while tonumber(fibaro:getValue(745, "value")) > 0 do
     	fibaro:sleep(600000)
     	end
   
