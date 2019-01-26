@@ -33,7 +33,7 @@ then
 	fibaro:call(641, "setArmed", "0");
 	fibaro:call(210, "setArmed", "0");
 	fibaro:call(343, "setArmed", "0");
-	fibaro:call(667, "setArmed", "0");
+	fibaro:call(745, "setArmed", "0");
     fibaro:call(601, "setArmed", "0"); 
   	-- Slår av kamera
 	fibaro:call(479, "turnOff");
