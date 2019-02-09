@@ -24,7 +24,10 @@ if fibaro:countScenes() > 1 then fibaro:abort() end
     -- Locking the door if it is closed but not locked
   	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(734, "value")) == 1)
     then 
-    fibaro:call(731, "unsecure");
+    fibaro:call(753, "secure");
     end
     
 end
+
+
+
