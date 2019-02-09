@@ -110,7 +110,7 @@ function openEscapeRoute()
     fibaro:debug('Låser opp døra.')
 	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(734, "value")) == 0)
     then
-    fibaro:call(731, "secure");
+    fibaro:call(753, "unsecure");
 	end
 end
 
