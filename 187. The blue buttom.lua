@@ -207,7 +207,7 @@ elseif (tostring(button_source["keyAttribute"]) == "Pressed3") then
     	-- låser dør
 	  	if ( tonumber(fibaro:getValue(430, "value")) == 0 and tonumber(fibaro:getValue(734, "value")) == 1)
 	    then 
-	    fibaro:call(731, "unsecure");
+	    fibaro:call(753, "secure");
 	    end
     
        	-- sjekker at dørslå er i før alarm settes på
