@@ -33,9 +33,9 @@ then
  	end
   
   	-- lukker krana om denne er åpen
-	if ( tonumber(fibaro:getValue(656, "value")) > 0 )
+	if ( tonumber(fibaro:getValue(755, "value")) > 0 )
 		then
-		fibaro:call(656, "turnOff");
+		fibaro:call(755, "turnOff");
 	end
   
   	fibaro:setGlobal("Vannlekkasje", "Ja");
@@ -43,11 +43,11 @@ then
     
     -- sjekker at hovedkran faktisk ble lukket
     	local teller = 1
-    	while ( tonumber(fibaro:getValue(656, "value")) > 0 and teller < 60) do
+    	while ( tonumber(fibaro:getValue(755, "value")) > 0 and teller < 60) do
     	fibaro:sleep(1000)
     	teller = teller + 1
     	end
-    	if tonumber(fibaro:getValue(656, "value")) == 0
+    	if tonumber(fibaro:getValue(755, "value")) == 0
       	then
       		local subject = "Rabakken5" -- passord SMS
   			local message = "Vannlekkasje i Rabakken 5. Hovedkran er automatisk stengt."
