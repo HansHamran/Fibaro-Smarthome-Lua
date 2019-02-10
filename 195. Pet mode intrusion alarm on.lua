@@ -155,9 +155,9 @@ if (startSource["type"] == "other") then
       
       
       		fibaro:debug("Alarm slått på")
-      			if ( fibaro:getGlobalValue("Ferie") == "Ja" and tonumber(fibaro:getValue(656, "value")) > 0 )
+      			if ( fibaro:getGlobalValue("Ferie") == "Ja" and tonumber(fibaro:getValue(755, "value")) > 0 )
 				then 
-        		fibaro:call(656, "turnOff");
+        		fibaro:call(755, "turnOff");
         		fibaro:debug("Hovedkran er stengt");
 				end
     		end
