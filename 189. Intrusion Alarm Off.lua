@@ -72,10 +72,10 @@ then
     
   	-- Åpner kran om ferie er årsak til at den er lukket
   	fibaro:debug("Alarm er slått av")
-  		if ( fibaro:getGlobalValue("Ferie") == "Ja" and tonumber(fibaro:getValue(656, "value")) == 0 
+  		if ( fibaro:getGlobalValue("Ferie") == "Ja" and tonumber(fibaro:getValue(755, "value")) == 0 
         and fibaro:getGlobalValue("Vannlekkasje") == "Nei")
 			then 
-        	fibaro:call(656, "turnOn");
+        	fibaro:call(755, "turnOn");
         	fibaro:debug("Hovedkran er åpnet");
 		end
     fibaro:setGlobal("VenteHjemmeAlarm", "Nei")
