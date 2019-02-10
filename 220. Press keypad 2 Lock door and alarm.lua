@@ -163,11 +163,11 @@ if fibaro:countScenes() > 1 then fibaro:abort() end
       
       		fibaro:debug("Alarm is turned on")
       
-      			if ( fibaro:getGlobalValue("Ferie") == "Ja" and tonumber(fibaro:getValue(656, "value")) > 0 )
+      			if ( fibaro:getGlobalValue("Ferie") == "Ja" and tonumber(fibaro:getValue(755, "value")) > 0 )
 				then 
         		
         		fibaro:debug("Water is closed");
-        		fibaro:call(656, "turnOff");
+        		fibaro:call(755, "turnOff");
 				end
     		end
     else
