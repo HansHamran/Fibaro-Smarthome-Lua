@@ -1,7 +1,7 @@
 --[[
 %% autostart
 %% properties
-343 value
+771 value
 %% events
 %% globals
 --]]
@@ -9,17 +9,17 @@
 local startSource = fibaro:getSourceTrigger();
 if fibaro:countScenes() > 1 then fibaro:abort() end
 if (
- ( tonumber(fibaro:getValue(343, "value")) > 0  
+ ( tonumber(fibaro:getValue(771, "value")) > 0  
       and fibaro:getGlobalValue("SunSet") == "Ja"  
       and  fibaro:getGlobalValue("AutolysOFF") == "Ja"  
-      and  tonumber(fibaro:getValue(345, "value")) < 30  -- lux gang
+      and  tonumber(fibaro:getValue(773, "value")) < 30  -- lux gang
       and  tonumber(fibaro:getValue(585, "value")) == 0 -- spot garderobe 
       )  
 or
 (startSource["type"] == "other"
       and fibaro:getGlobalValue("SunSet") == "Ja"  
       and  fibaro:getGlobalValue("AutolysOFF") == "Ja"  
-      and  tonumber(fibaro:getValue(345, "value")) < 30  -- lux gang
+      and  tonumber(fibaro:getValue(773, "value")) < 30  -- lux gang
       and  tonumber(fibaro:getValue(585, "value")) == 0 -- spot garderobe 
       )  
 )
@@ -29,7 +29,7 @@ then
 	fibaro:call(227, "setValue", "10");
 	fibaro:sleep(600000);
   
-    while tonumber(fibaro:getValue(343, "value")) > 0 do
+    while tonumber(fibaro:getValue(771, "value")) > 0 do
     fibaro:sleep(600000)
     end
   	
