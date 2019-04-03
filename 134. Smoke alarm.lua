@@ -16,8 +16,8 @@
 489 value
 522 value
 523 value
-518 value
-519 value
+777 value
+778 value
 593 value
 594 value
 597 value
@@ -28,7 +28,7 @@
 --]]
 
 -- IDs der Rauchmelder (Oben in den properties die IDs auch eintragen)
-local smokeID = {613, 614, 593, 594, 597, 598, 363, 364, 139, 140, 412, 413, 690, 691, 686, 687, 359, 360, 488, 489, 522, 523, 518, 519}
+local smokeID = {613, 614, 593, 594, 597, 598, 363, 364, 139, 140, 412, 413, 690, 691, 686, 687, 359, 360, 488, 489, 522, 523, 777, 778}
 
 
 -- Einstellungen für die Sirene(n) (Wenn keine IDs eingetragen sind, wird die Funktion nicht genutzt)
