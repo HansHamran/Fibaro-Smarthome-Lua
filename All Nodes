@@ -30,9 +30,9 @@
 247	Spot nedegang
 251	Spot lang gang
 585	Spot garderobe
-343	Bevegelse gang
-344	Temp bevegelse gang
-345	Luxmåler gang
+771	Bevegelse gang (343)
+772	Temp bevegelse gang (344)
+773	Luxmåler gang (345)
 753	Danloc V3 dørlås (gammel 731)
 734	Dørslå ytterdør (441 gammel)
 639	Dørsensor hagedør sittegruppe
