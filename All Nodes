@@ -21,7 +21,8 @@
 364	Varmesensor stue
 365	Temp røykvarsler stue
 572	Rele Nobø 4. stue
-768	Temp noice sensor
+768	Temp decibel sensor stue
+765	Decibel sensor stue
 	
 	Gang
 661	Persienne gang (gammel var 48)
