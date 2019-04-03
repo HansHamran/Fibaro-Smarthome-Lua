@@ -12,8 +12,8 @@
 444 armed
 210 value
 210 armed
-343 value
-343 armed
+771 value
+771 armed
 745 value
 745 armed
 601 value
@@ -22,7 +22,7 @@
 --]]
 
 -- IDs sensor
-local sensorID = {24, 430, 639, 422, 444, 210, 343, 745, 601}
+local sensorID = {24, 430, 639, 422, 444, 210, 771, 745, 601}
 
 local phoneID = {710, 711} -- ID der Handys
 
@@ -71,7 +71,3 @@ if (startSource['type'] == 'property')
 
 	end
 end
-
-
-
-
