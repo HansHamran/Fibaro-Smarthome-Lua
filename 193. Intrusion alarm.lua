@@ -4,7 +4,7 @@
 --]]
 
 -- Bevegelsesdektorer og dør/vindusensorer
-local sensorID = {24,430,639,422,444,210,343,745,481}
+local sensorID = {24,430,639,422,444,210,771,745,481}
 
 -- Sirene
 -- local sireneID = {349} -- LYS test
