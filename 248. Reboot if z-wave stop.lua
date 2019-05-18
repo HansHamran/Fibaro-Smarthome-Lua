@@ -86,7 +86,7 @@ then
 							HomeCenter.SystemService.reboot();
       						fibaro:debug("Treff ");
       						fibaro:setGlobal("Zwavesum", 1)
-      						fibaro:sleep(1*10*1000) -- hold 10 sek 
+      						fibaro:sleep(1*60*1000) -- hold 1 min 
       						fibaro:startScene(218); -- boot system
       						fibaro:sleep(3*60*1000) -- hold 3 min
 					else
