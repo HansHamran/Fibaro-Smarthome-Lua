@@ -92,7 +92,7 @@ then
 					else
 							fibaro:setGlobal("Zwavesum", ZSUM )	
 				end
-		fibaro:sleep(5*60*1000) -- Sjekker hvert 5 minutt
+		fibaro:sleep(7*60*1000) -- Sjekker hvert 7 minutt
 		end
 
 end
